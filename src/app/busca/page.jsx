@@ -27,15 +27,9 @@ export default function Busca() {
     function exibirFilmes() {
         if (filmesEncontrados.length > 0) {
             return (<div className="d-flex flex-wrap gap-5 justify-content-center pt-5">
-                {filmesEncontrados.map((item, index) => {
-                    return (
-                        <div key={index}>
-                            <Card
-                                img={`https://image.tmdb.org/t/p/w1280${item.poster_path}`}
-                            />
-                        </div>
-                    )
-                })}
+                {filmesEncontrados.map((item, index) => (
+                    <Card key={index} item={item} />
+                ))}
             </div>)
 
         } else {
