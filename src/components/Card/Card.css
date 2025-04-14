@@ -5,7 +5,7 @@
     overflow: hidden;
     background: var(--branco);
     transition: transform 0.2s ease;
-    border: 3px solid var(--amarelo);
+    border: 2px solid var(--amarelo);
     position: relative;
 }
 

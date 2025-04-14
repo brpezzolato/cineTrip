@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "nome": "Anora",
+        "image": "./oscarAnora.png",
+        "tmdb_id": 1064213,
+        "data": "2024"
+    },
+    {
+        "id": 2,
+        "nome": "Oppenheimer",
+        "image": "./oscarOppenheimer.png",
+        "tmdb_id": 872585,
+        "data": "2023"
+    },
+    {
+        "id": 3,
+        "nome": "Everything Everywhere All at Once",
+        "image": "./oscarEverythingEverywhere.png",
+        "tmdb_id": 545611,
+        "data": "2022"
+    },
+    {
+        "id": 4,
+        "nome": "Coda",
+        "image": "./oscarCoda.png",
+        "tmdb_id": 776503,
+        "data": "2021"
+    },
+    {
+        "id": 5,
+        "nome": "Nomadland",
+        "image": "./oscarNomadland.png",
+        "tmdb_id": 581734,
+        "data": "2020"
+    },
+    {
+        "id": 6,
+        "nome": "Parasite",
+        "image": "./oscarParasite.png",
+        "tmdb_id": 496243,
+        "data": "2019"
+    },
+    {
+        "id": 7,
+        "nome": "Green Book",
+        "image": "./oscarGreenBook.png",
+        "tmdb_id": 490132,
+        "data": "2018"
+    },
+    {
+        "id": 8,
+        "nome": "The Shape of Water",
+        "image": "./oscarTheShapeWater.png",
+        "tmdb_id": 399055,
+        "data": "2017"
+    },
+    {
+        "id": 9,
+        "nome": "Moonlight",
+        "image": "./oscarMoonlight.png",
+        "tmdb_id": 376867,
+        "data": "2016"
+    }
+]

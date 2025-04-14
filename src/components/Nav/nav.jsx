@@ -51,7 +51,7 @@ export default function Nav() {
                         </li>
 
                         <li className="nav-item item-3">
-                            <Link className="nav-link color-nav text-nowrap" href="/historia">Blog de Cinema</Link>
+                            <Link className="nav-link color-nav text-nowrap" href="/blog">Blog de Cinema</Link>
                         </li>
                         <li className="nav-item item-4">
                             <Link className="nav-link color-nav text-nowrap" href="/sobre">Sobre Nós</Link>

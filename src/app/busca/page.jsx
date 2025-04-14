@@ -11,7 +11,7 @@ export default function Busca() {
     const [filmes, setFilmes] = useState([])
 
     const chave = "de7216d4878c63a09391f1c1257f3f7b"
-    const url = "https://api.themoviedb.org/3/search/multi" // Corrigi o endpoint (de "mult" para "multi")
+    const url = "https://api.themoviedb.org/3/search/multi"
 
     useEffect(() => {
         if (valorBuscado) {
