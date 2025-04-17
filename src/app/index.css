@@ -6,7 +6,7 @@
     --preto: black;
 }
 
-.item-1 {
-    color: var(--amarelo) !important;
-    border-bottom: 1px solid var(--amarelo);
+body {
+    background-color: var(--preto);
 }
+

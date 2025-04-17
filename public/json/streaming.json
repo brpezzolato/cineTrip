@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "nome": "Netflix",
+        "id_tmdb": 8,
+        "imagem": "/streamings/netflix.png"
+    },
+    {
+        "id": 2,
+        "nome": "Prime Video",
+        "id_tmdb": 119,
+        "imagem": "/streamings/prime.png"
+    },
+    {
+        "id": 3,
+        "nome": "Disney+",
+        "id_tmdb": 337,
+        "imagem": "/streamings/disney.png"
+    },
+    {
+        "id": 4,
+        "nome": "Max",
+        "id_tmdb": 384,
+        "imagem": "/streamings/hbo.png"
+    },
+    {
+        "id": 5,
+        "nome": "Globoplay",
+        "id_tmdb": 307,
+        "imagem": "/streamings/globoplay.png"
+    },
+    {
+        "id": 6,
+        "nome": "Apple TV+",
+        "id_tmdb": 350,
+        "imagem": "/streamings/apple.png"
+    },
+    {
+        "id": 7,
+        "nome": "Paramount+",
+        "id_tmdb": 531,
+        "imagem": "/streamings/paramount.png"
+    }
+]

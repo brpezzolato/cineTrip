@@ -1,6 +1,7 @@
 import "./nav.css";
 import Link from "next/link";
 import Busca from '@/components/Busca/busca';
+import DropdownCategorias from "@/components/DropdownCategorias/DropdownCategorias";
 
 export default function Nav() {
     return (
@@ -28,36 +29,21 @@ export default function Nav() {
                         <Busca />
                     </div>
 
-                    <ul className="navbar-nav w-100 d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-0 gap-lg-3 position-relative">
+                    <ul className="navbar-nav w-100 d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-0 gap-lg-2 position-relative">
                         <li className="nav-item">
                             <Link className="nav-link color-nav text-nowrap item-1" href="/">Home</Link>
                         </li>
 
-                        <li className="nav-item dropdown item-2">
-                            <a
-                                className="nav-link dropdown-toggle color-nav text-nowrap"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                Categorias
-                            </a>
-                            <ul className="dropdown-menu pt-0 pb-0 pt-lg-2 pb-lg-2">
-                                <li><Link className="dropdown-item color-nav" href="#">Ação</Link></li>
-                                <li><Link className="dropdown-item color-nav" href="#">Drama</Link></li>
-                                <li><Link className="dropdown-item color-nav" href="#">Comédia</Link></li>
-                            </ul>
-                        </li>
+                        <DropdownCategorias />
 
-                        <li className="nav-item item-3">
-                            <Link className="nav-link color-nav text-nowrap" href="/blog">Blog de Cinema</Link>
+                        <li className="nav-item">
+                            <Link className="nav-link color-nav text-nowrap item-3" href="/blog">Blog de Cinema</Link>
                         </li>
-                        <li className="nav-item item-4">
-                            <Link className="nav-link color-nav text-nowrap" href="/sobre">Sobre Nós</Link>
+                        <li className="nav-item">
+                            <Link className="nav-link color-nav text-nowrap item-4" href="/sobre">Sobre Nós</Link>
                         </li>
-                        <li className="nav-item item-5">
-                            <Link className="nav-link color-nav text-nowrap" href="/contato">Fale Conosco</Link>
+                        <li className="nav-item">
+                            <Link className="nav-link color-nav text-nowrap tem-5" href="/contato">Fale Conosco</Link>
                         </li>
                     </ul>
                 </div>

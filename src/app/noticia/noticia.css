@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+    --branco: #ffff;
+    --amarelo: #FFC800;
+    --azulEscuro: #1E1E4F;
+    --cinzaEscuro: #131313;
+    --preto: black;
+}
+
+body {
+    background-color: var(--cinzaEscuro);
+}
+
+
+.noticias {
+    padding: 5%;
+}
+
+.superior {
+    width: 100%;
+}
+
+.title-noticia {
+    text-align: justify;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.title-noticia h2 {
+    color: var(--branco);
+}
+
+.title-noticia p {
+    color: #d1d1d1;
+}
+
+.imagem {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.bannerNoticia {
+    width: 90%;
+    border-radius: 15px;
+}
+
+.paiLinha {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.linha {
+    background-color: var(--amarelo);
+    width: 94%;
+    height: 1px;
+    margin-top: 3%;
+}
+
+.corpoNoticia {
+    padding: 2% 11%;
+}
+
+.corpoNoticia p {
+    color: var(--branco);
+    text-align: justify;
+}

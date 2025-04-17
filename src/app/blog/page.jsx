@@ -6,7 +6,6 @@ import Noticias from "@/components/Noticias/Noticias";
 import "./blog.css"
 
 export default function Blog() {
-
     const [oscarData, setOscarData] = useState([]);
     const [noticiasData, setNoticiasData] = useState([]);
 
@@ -25,12 +24,24 @@ export default function Blog() {
 
     return (
         <>
-
-            <section className="design" id="design">
-                <div className="container">
+            <style type="text/css">
+                {`
+                .item-3 {
+                color: var(--amarelo) !important;
+                border-bottom: 1px solid var(--amarelo);
+                }
+            `}
+            </style>
+            <section className="design container-geral" id="design">
+                <div className="container-geral">
                     <div className="designtitle">
-                        <h2>Melhores Filmes</h2>
-                        <p>os 9 últimos ganhadores do prêmio oscar de melhor filme</p>
+                        <div className="premio">
+                            <h2>O Blog</h2>
+                            <img className="trofeu" src="/trofeuOscar.png" />
+                            <h2>ndica</h2>
+                        </div>
+                        <div className="subtitulo">
+                            <p>os 9 últimos ganhadores do prêmio oscar de melhor filme</p></div>
                     </div>
                     <div className="design-content">
                         {oscarData.map((item, index) => {
@@ -47,7 +58,7 @@ export default function Blog() {
             </section>
 
             <section className="blog" id="blog">
-                <div className="container">
+                <div className="container-geral">
                     <div className="title1">
                         <h2>Tudo sobre cinema</h2>
                         <p>fique por dentro das últimas noticias do mundo cinematográfico</p>
@@ -65,10 +76,6 @@ export default function Blog() {
                     </div>
                 </div>
             </section>
-
-
-
-
         </>
     )
 }

@@ -8,9 +8,9 @@ export default function Oscar({ item }) {
                     <div className="design-img">
                         <img src={item.image} />
                         <span>
-                            <i className="bi bi-star-fill"></i>  22
+                            <i className="bi bi-star-fill"></i>  {item.nota}
                         </span>
-                        <span className="quadrado2"><i className="bi bi-calendar-check-fill"></i> 
+                        <span className="quadrado2"><i className="bi bi-calendar-check-fill"></i>
                             {item.data}
                         </span>
                     </div>
