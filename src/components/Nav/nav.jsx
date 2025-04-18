@@ -40,7 +40,7 @@ export default function Nav() {
                             <Link className="nav-link color-nav text-nowrap item-3" href="/blog">Blog de Cinema</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link color-nav text-nowrap item-4" href="/sobre">Sobre Nós</Link>
+                            <Link className="nav-link color-nav text-nowrap item-4" href="/streaming">Nos Streamings</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link color-nav text-nowrap tem-5" href="/contato">Fale Conosco</Link>

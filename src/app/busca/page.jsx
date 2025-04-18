@@ -1,51 +1,57 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useParams } from "next/navigation"
-import Card from "@/components/Card/Card"
+import { useSearchParams } from "next/navigation"
+import Card from "@/components/Card/Card";
 import "./page.css"
 
-export default function Streaming() {
-    const params = useParams()
-    const id_tmdb = params.id
+
+export default function Busca() {
+    const searchParams = useSearchParams()
+    const valorBuscado = searchParams.get("valorBuscado")
     const [filmes, setFilmes] = useState([])
-    const [series, setSeries] = useState([])
 
     const chave = "de7216d4878c63a09391f1c1257f3f7b"
-
-    const urlFilmes = `https://api.themoviedb.org/3/discover/movie?api_key=${chave}&language=pt-BR&sort_by=popularity.desc&watch_region=BR&with_watch_monetization_types=flatrate&with_watch_providers=${id_tmdb}`
-    const urlSeries = `https://api.themoviedb.org/3/discover/tv?api_key=${chave}&language=pt-BR&sort_by=popularity.desc&watch_region=BR&with_watch_monetization_types=flatrate&with_watch_providers=${id_tmdb}`
+    const url = "https://api.themoviedb.org/3/search/multi"
 
     useEffect(() => {
-        fetch(urlFilmes)
-            .then(res => res.json())
-            .then(data => {
-                const resultados = data.results || [];
-                resultados.forEach(item => item.media_type = "movie");
-                setFilmes(resultados);
-            })
-            .catch(err => console.error("Erro ao carregar filmes:", err))
+        if (valorBuscado) {
+            fetch(`${url}?api_key=${chave}&query=${encodeURIComponent(valorBuscado)}&language=pt-BR`)
+                .then(response => response.json())
+                .then(data => setFilmes(data.results || []))
+                .catch(error => console.error("Erro:", error))
+        }
+    }, [valorBuscado])
 
-        fetch(urlSeries)
-            .then(res => res.json())
-            .then(data => {
-                const resultados = data.results || [];
-                resultados.forEach(item => item.media_type = "tv");
-                setSeries(resultados);
-            })
-            .catch(err => console.error("Erro ao carregar séries:", err))
-    }, [id_tmdb])
+    const filmesEncontrados = filmes.filter(item => item.poster_path != null)
 
-    const resultados = filmes.concat(series)
-
-    return (
-        <div className="container">
-            <h1 className="titulo text-center pt-5">Filmes e Séries disponíveis</h1>
-            <div className="d-flex flex-wrap gap-5 justify-content-center pt-4">
-                {resultados.map((item, index) => (
+    function exibirFilmes() {
+        if (filmesEncontrados.length > 0) {
+            return (<div className="d-flex flex-wrap gap-5 justify-content-center pt-5">
+                {filmesEncontrados.map((item, index) => (
                     <Card key={index} item={item} />
                 ))}
+            </div>)
+
+        } else {
+            return (
+                <div className="d-flex justify-content-center align-items-center nao-encontrado">
+                    <h2><span>Nenhum</span> filme encontrado, desculpe.</h2>
+                </div>
+            )
+        }
+    }
+
+    return (
+        <>
+            <div className="title pt-5 ps-2 ps-lg-5">
+                <h1 className="titulo">Resultados para: <span>{valorBuscado}</span></h1>
+                <h4 className="sub-titulo">Mídias encontradas: {filmesEncontrados.length}</h4>
             </div>
-        </div>
+
+            <div className="container">
+                {exibirFilmes()}
+            </div>
+        </>
     )
 }

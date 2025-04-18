@@ -32,8 +32,8 @@ export default function Blog() {
                 }
             `}
             </style>
-            <section className="design container-geral" id="design">
-                <div className="container-geral">
+            <section className="design container-geral1" id="design">
+                <div className="container-geral1">
                     <div className="designtitle">
                         <div className="premio">
                             <h2>O Blog</h2>

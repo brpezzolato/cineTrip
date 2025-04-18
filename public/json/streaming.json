@@ -3,42 +3,49 @@
         "id": 1,
         "nome": "Netflix",
         "id_tmdb": 8,
-        "imagem": "/streamings/netflix.png"
+        "imagem": "/streamings/netflix.png",
+        "rota": "/streaming/8"
     },
     {
         "id": 2,
         "nome": "Prime Video",
         "id_tmdb": 119,
-        "imagem": "/streamings/prime.png"
+        "imagem": "/streamings/prime.png",
+        "rota": "/streaming/119"
     },
     {
         "id": 3,
         "nome": "Disney+",
         "id_tmdb": 337,
-        "imagem": "/streamings/disney.png"
+        "imagem": "/streamings/disney.png",
+        "rota": "/streaming/337"
     },
     {
         "id": 4,
         "nome": "Max",
-        "id_tmdb": 384,
-        "imagem": "/streamings/hbo.png"
+        "id_tmdb": 1899,
+        "imagem": "/streamings/hbo.png",
+        "rota": "/streaming/1899"
     },
     {
         "id": 5,
         "nome": "Globoplay",
         "id_tmdb": 307,
-        "imagem": "/streamings/globoplay.png"
+        "imagem": "/streamings/globoplay.png",
+        "rota": "/streaming/307"
     },
     {
         "id": 6,
         "nome": "Apple TV+",
         "id_tmdb": 350,
-        "imagem": "/streamings/apple.png"
+        "imagem": "/streamings/apple.png",
+        "rota": "/streaming/350"
     },
     {
         "id": 7,
         "nome": "Paramount+",
         "id_tmdb": 531,
-        "imagem": "/streamings/paramount.png"
+        "imagem": "/streamings/paramount.png",
+        "rota": "/streaming/531"
     }
 ]
