@@ -1,0 +1,13 @@
+.streaming-logo {
+    width: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.streaming-logo:hover {
+    transform: translateY(-5px);
+    opacity: 80%;
+    transition: .5s;
+}

@@ -43,7 +43,7 @@ export default function Nav() {
                             <Link className="nav-link color-nav text-nowrap item-4" href="/streaming">Nos Streamings</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link color-nav text-nowrap tem-5" href="/contato">Fale Conosco</Link>
+                            <Link className="nav-link color-nav text-nowrap item-5" href="/contato">Fale Conosco</Link>
                         </li>
                     </ul>
                 </div>

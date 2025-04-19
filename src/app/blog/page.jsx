@@ -1,39 +1,25 @@
-"use client"
-
-import { useEffect, useState } from "react"
 import Oscar from "@/components/Oscar/Oscar";
 import Noticias from "@/components/Noticias/Noticias";
-import "./blog.css"
+import "./blog.css";
 
-export default function Blog() {
-    const [oscarData, setOscarData] = useState([]);
-    const [noticiasData, setNoticiasData] = useState([]);
+export default async function Blog() {
+    const oscarRes = await fetch("http://localhost:3000/json/oscar.json");
+    const noticiasRes = await fetch("http://localhost:3000/json/noticias.json");
 
-    useEffect(() => {
-        fetch("/json/oscar.json")
-            .then(res => res.json())
-            .then(data => setOscarData(data))
-            .catch(err => console.error("Erro ao carregar os dados do Oscar:", err));
-
-        fetch("/json/noticias.json")
-            .then(res => res.json())
-            .then(data => setNoticiasData(data))
-            .catch(err => console.error("Erro ao carregar as notícias:", err));
-    }, []);
-
+    const oscarData = await oscarRes.json();
+    const noticiasData = await noticiasRes.json();
 
     return (
         <>
-            <style type="text/css">
-                {`
+            <style>{`
                 .item-3 {
-                color: var(--amarelo) !important;
-                border-bottom: 1px solid var(--amarelo);
+                    color: var(--amarelo) !important;
+                    border-bottom: 1px solid var(--amarelo);
                 }
-            `}
-            </style>
-            <section className="design container-geral1" id="design">
-                <div className="container-geral1">
+            `}</style>
+
+            <section className="design container-geral" id="design">
+                <div className="container-geral">
                     <div className="designtitle">
                         <div className="premio">
                             <h2>O Blog</h2>
@@ -41,18 +27,15 @@ export default function Blog() {
                             <h2>ndica</h2>
                         </div>
                         <div className="subtitulo">
-                            <p>os 9 últimos ganhadores do prêmio oscar de melhor filme</p></div>
+                            <p>os 9 últimos ganhadores do prêmio oscar de melhor filme</p>
+                        </div>
                     </div>
                     <div className="design-content">
-                        {oscarData.map((item, index) => {
-                            return (
-                                <div key={index}>
-                                    <div className="galeria">
-                                        <Oscar item={item} />
-                                    </div>
-                                </div>
-                            )
-                        })}
+                        {oscarData.map((item, index) => (
+                            <div key={index} className="galeria">
+                                <Oscar item={item} />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -64,18 +47,20 @@ export default function Blog() {
                         <p>fique por dentro das últimas noticias do mundo cinematográfico</p>
                     </div>
                     <div className="blog-content">
-                        {noticiasData.map((desc, noticia) => {
-                            return (
-                                <div key={noticia}>
-                                    <div className="noticias">
-                                        <Noticias imagem={desc.imagem} titulo={desc.titulo} descricao={desc.descricao} data={desc.data} horario={desc.horario} />
-                                    </div>
-                                </div>
-                            )
-                        })}
+                        {noticiasData.map((desc, index) => (
+                            <div key={index} className="noticias">
+                                <Noticias
+                                    imagem={desc.imagem}
+                                    titulo={desc.titulo}
+                                    descricao={desc.descricao}
+                                    data={desc.data}
+                                    horario={desc.horario}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
         </>
-    )
+    );
 }

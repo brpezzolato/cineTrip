@@ -1,38 +1,108 @@
+import Link from "next/link";
 import "./style.css";
 
 export default async function Filme({ params }) {
-    
     const filmeId = params.id;
     const chave = "de7216d4878c63a09391f1c1257f3f7b";
 
-    const resposta = await fetch(`https://api.themoviedb.org/3/movie/${filmeId}?api_key=${chave}&language=pt-BR`);
+    const resposta = await fetch(`https://api.themoviedb.org/3/movie/${filmeId}?api_key=${chave}&language=pt-BR&append_to_response=credits,videos,watch/providers`);
     const filme = await resposta.json();
 
+    const trailer = filme.videos && filme.videos.results.find(v => v.type === "Trailer" && v.site === "YouTube");
+    const diretor = filme.credits && filme.credits.crew.find(p => p.job === "Director");
+    const elenco = filme.credits && filme.credits.cast.slice(0, 5);
+
     return (
-        <div className="container mt-4 d-flex justify-content-center">
-            <div className="card mb-3" style={{ maxWidth: 1060 }}>
-                <div className="row g-0">
-                    <div className="col-md-4">
-                        <img
-                            src={`https://image.tmdb.org/t/p/w1280${filme.poster_path}`}
-                            className="img-fluid rounded-start"
-                            alt={filme.title}
-                        />
-                    </div>
-                    <div className="col-md-8 d-flex align-items-center justify-content-center flex-column">
-                        <div className="card-body">
-                            <h1 className="card-title p-3">{filme.title}</h1>
-                            <h5 className="btn-danger p-3">{filme.release_date?.slice(0, 4)} | {filme.genres.map(g => g.name).join(', ')}</h5>
-                            <h5 className="card-text p-3">
-                                <small className="text-body-secondary">Nota média: {filme.vote_average}</small>
-                            </h5>
-                            <p className="card-text p-3">
-                                <small className="text-body-secondary">{filme.overview}</small>
-                            </p>
+        <>
+            <div className="backdrop" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${filme.backdrop_path})` }}>
+                <div className="content-main d-flex flex-column flex-md-row align-items-center justify-content-center p-3 gap-5">
+                    <img
+                        className="poster"
+                        src={`https://image.tmdb.org/t/p/original${filme.poster_path}`}
+                    />
+                    <div className="info">
+                        <h1>{filme.title} ({new Date(filme.release_date).getFullYear()})</h1>
+                        <div className="paragarafos">
+                            <p className="pb-0"><i className="bi bi-star"></i> {filme.vote_average}</p>
+                            <p><i className="bi bi-cassette"></i> {filme.genres.map(generos => generos.name).join(", ")}</p>
+                            <p><i className="bi bi-stopwatch"></i> {filme.runtime} min</p>
+                            <p><i className="bi bi-calendar-event"></i> Lançamento: {filme.release_date}</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div className="content-sec container mt-4">
+                <div className="row justify-content-center gap-4">
+
+                    <div className="caixa-1 col-12 col-lg-6 d-flex flex-column gap-4">
+                        <div className="d-flex flex-wrap gap-5">
+                            <div className="sinopse">
+                                <h2>Sinopse</h2>
+                                <p>{filme.overview}</p>
+                            </div>
+                        </div>
+
+                        {elenco.length > 0 && (
+                            <div className="elenco">
+                                <h2>Elenco Principal</h2>
+                                {elenco.map(ator => (
+                                    <li key={ator.id}>{ator.name} como <span>{ator.character}</span><br /></li>
+                                ))}
+                            </div>
+                        )}
+
+                        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal-dialog modal-lg modal-dialog-centered">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h1 className="modal-title fs-5" id="exampleModalLabel">{filme.title} ({new Date(filme.release_date).getFullYear()})</h1>
+                                    </div>
+                                    <div className="modal-body d-flex justify-content-center">
+                                        <iframe
+                                            width="100%"
+                                            height="400"
+                                            src={`https://www.youtube.com/embed/${trailer ? trailer.key : ""}`}
+                                            title="Trailer"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                        ></iframe>
+                                    </div>
+                                    <div className="modal-footer">
+                                        <button type="button" className="btn btn-outline-warning w-100" data-bs-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="caixa-2 col-12 col-lg-5 card-infos-rapidas">
+                        <h2 className="info-rapida">Informações Rápidas</h2>
+                        <ul className="list-unstyled mt-1 d-flex flex-column gap-1">
+                            <li><span>Idioma Original:</span> {filme.original_language.toUpperCase()}</li>
+                            <li><span>Orçamento:</span> {filme.budget ? `$ ${filme.budget.toLocaleString()}` : "Não informado"}</li>
+                            <li><span>Receita:</span> {filme.revenue ? `$ ${filme.revenue.toLocaleString()}` : "Não informado"}</li>
+                            <li><span>Classificação:</span> {filme.adult ? "+18" : "Livre"}</li>
+                            <li><span>Diretor:</span> {diretor ? diretor.name : "Não informado"}</li>
+                        </ul>
+
+                        {trailer && (
+                            <div className="trailer">
+                                <h2 className="pb-2">Trailer</h2>
+                                <p className="mt-2">{filme.title}</p>
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-warning"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal"
+                                >
+                                    Ver Trailer
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }

@@ -15,6 +15,7 @@
 
 body {
     line-height: 1.4;
+    background-color: var(--preto );
 }
 
 img {
@@ -32,13 +33,13 @@ img {
     padding: 0 4rem;
 }
 
-.premio{
+.premio {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.trofeu{
+.trofeu {
     height: 40px;
     width: 15px;
     margin-left: 1%;

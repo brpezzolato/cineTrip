@@ -17,7 +17,7 @@ export default function DropdownCategorias() {
     return (
         <li className="nav-item dropdown item-2">
             <a
-                className="nav-link dropdown-toggle color-nav text-nowrap"
+                className="nav-link dropdown-toggle color-nav categ text-nowrap"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"

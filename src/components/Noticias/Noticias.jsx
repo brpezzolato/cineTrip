@@ -1,5 +1,5 @@
-
-export default function Noticias({data, horario, titulo, descricao, imagem}) {
+import Link from 'next/link';
+export default function Noticias({ data, horario, titulo, descricao, imagem }) {
     return (
         <>
             <div className="blog-item">
@@ -12,7 +12,9 @@ export default function Noticias({data, horario, titulo, descricao, imagem}) {
                     <p>
                         {descricao}
                     </p>
-                    <a href="#">Ler Mais</a>
+                    <Link href="#">
+                        Ler Mais
+                    </Link>
                 </div>
             </div>
         </>

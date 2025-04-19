@@ -10,3 +10,12 @@ body {
     background-color: var(--preto);
 }
 
+.titulo-destaque h1 {
+    color: var(--branco);
+    border-left: solid 3px var(--amarelo);
+    padding-left: 10px;
+}
+
+.titulo-destaque span {
+    color: var(--amarelo);
+}

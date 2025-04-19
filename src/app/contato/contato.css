@@ -1,0 +1,79 @@
+body {
+    background-color: var(--preto);
+}
+
+.container-str {
+    margin-bottom: 50px;
+}
+
+.titulo {
+    border-left: solid 3px var(--amarelo);
+    padding-left: 10px;
+    color: var(--branco);
+}
+
+.sub-titulo {
+    color: var(--branco);
+    font-weight: normal;
+    opacity: 90%;
+}
+
+.div-form {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 50%;
+}
+
+form input,
+form textarea {
+    background-color: var(--preto);
+    color: var(--branco);
+    border: 1px solid var(--cinzaEscuro);
+    padding: 0.75rem;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: var(--branco);
+}
+
+.accordion-button {
+    background-color: var(--preto);
+    color: var(--branco);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--preto);
+    border-bottom: 1px solid var(--cinzaEscuro);
+    color: var(--amarelo);
+    box-shadow: none;
+}
+
+.accordion-button .bi {
+    transition: transform 0.3s ease;
+}
+
+.accordion-body {
+    background-color: var(--preto);
+    color: var(--branco);
+    transition: all 0.4s ease-in-out;
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--cinzaEscuro);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    outline: none;
+}

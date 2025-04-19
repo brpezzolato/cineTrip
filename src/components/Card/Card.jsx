@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import './Card.css';
 
-export default function Card({ item }) {
-    let rota = '#'
+export default function Card({ item, tipo }) {
+    let mediaType = item.media_type || tipo;
+    let rota = '#';
 
-    if (item.media_type === "movie") {
-        rota = `/filme/${item.id}`
-    } else if (item.media_type === "tv") {
-        rota = `/serie/${item.id}`
+    if (mediaType === "movie") {
+        rota = `/filme/${item.id}`;
+    } else if (mediaType === "tv") {
+        rota = `/serie/${item.id}`;
     }
 
     return (

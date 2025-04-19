@@ -1,14 +1,16 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import Card from "@/components/Card/Card";
 import Carrosel from "@/components/Carrosel/Carrossel";
+import CarroselCard from "@/components/CarroselCard/CarroselCard";
+import Streamings from "@/components/Streamings/Streamings";
 import "./index.css";
 
 export default function Home() {
   const [cabecalho, setCabecalho] = useState([]);
-  const [populares, setPopulares] = useState([]);
+  const [streaming, setstreaming] = useState([]);
   const [emAlta, setEmAlta] = useState([]);
+  const [populares, setPopulares] = useState([]);
   const [cartaz, setCartaz] = useState([]);
   const [avaliados, setAvaliados] = useState([]);
 
@@ -27,8 +29,8 @@ export default function Home() {
       .then(data => setEmAlta(data.results || []))
       .catch(error => console.error("Erro:", error));
 
-    //LER OS MAIS POPULARES do streaming
-    fetch(`${url}https://api.themoviedb.org/3/discover/movie?api_key=${chave}&language=pt-BR&sort_by=popularity.desc&watch_region=BR&with_watch_monetization_types=flatrate`)
+    // LER OS MAIS POPULARES do streaming
+    fetch(`${url}discover/movie?api_key=${chave}&language=pt-BR&sort_by=popularity.desc&watch_region=BR&with_watch_monetization_types=flatrate`)
       .then(response => response.json())
       .then(data => setPopulares(data.results || []))
       .catch(error => console.error("Erro:", error));
@@ -39,11 +41,16 @@ export default function Home() {
       .then(data => setCartaz(data.results || []))
       .catch(error => console.error("Erro:", error));
 
-    //LER OS MAIS BEM AVALIADOS
-    fetch(`${url}movie/top_rated?api_key=${chave}&language=pt-BR`)
+    // LER OS MAIS BEM AVALIADOS
+    fetch(`${url}trending/tv/week?api_key=${chave}&language=pt-BR&region=BR`)
       .then(response => response.json())
       .then(data => setAvaliados(data.results || []))
       .catch(error => console.error("Erro:", error));
+
+    fetch("/json/streaming.json")
+      .then(res => res.json())
+      .then(data => setstreaming(data))
+      .catch(err => console.error("Erro ao carregar os dados do Carrosel:", err));
   }, []);
 
   return (
@@ -52,11 +59,65 @@ export default function Home() {
         {`.item-1 {
           color: var(--amarelo) !important;
           border-bottom: 1px solid var(--amarelo);
-          }`}
+        }`}
       </style>
+
       <Carrosel movies={cabecalho} />
 
+      <div className="container">
+        <div className="treanding">
+          <div className="titulo-destaque mt-5 mb-5">
+            <h1>Top trending da <span>semana</span></h1>
+          </div>
+          <div className="carrosel-trending">
+            <CarroselCard id="carrosel-alta" movies={emAlta} tipo="movie" />
+          </div>
+        </div>
 
+        <div className="treanding">
+          <div className="titulo-destaque mt-5 mb-5">
+            <h1>Os mais populares dos <span>streamings</span></h1>
+          </div>
+          <div className="carrosel-trending">
+            <CarroselCard id="carrosel-populares" movies={populares} tipo="movie" />
+          </div>
+        </div>
+
+        <div className="treanding">
+          <div className="titulo-destaque mt-5 mb-5">
+            <h1>Em <span>cartaz</span></h1>
+          </div>
+          <div className="carrosel-trending">
+            <CarroselCard id="carrosel-cartaz" movies={cartaz} tipo="movie" />
+          </div>
+        </div>
+
+        <div className="treanding">
+          <div className="titulo-destaque mt-5 mb-5">
+            <h1>Top trending de series da <span>semana</span></h1>
+          </div>
+          <div className="carrosel-trending">
+            <CarroselCard id="carrosel-avalados" movies={avaliados} tipo="tv" />
+          </div>
+        </div>
+
+        <div className="streamings-home">
+          <div className="titulo-destaque mt-5 mb-5">
+            <h1>Streamings mais <span>famosos</span></h1>
+          </div>
+
+          <div className="img-streamings">
+            <div className="design-str d-flex justify-content-center gap-5 flex-wrap pb-5">
+              {streaming.map((item) => (
+                <Streamings key={item.id} item={item} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
-  );
+  )
 }
+
+
+

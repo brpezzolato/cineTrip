@@ -10,7 +10,7 @@ let nomeStreaming
 
 export default function Streaming() {
     const params = useParams()
-    const id_tmdb = params.id
+    const id_tmdb = Number(params.id)
     const [filmes, setFilmes] = useState([])
     const [series, setSeries] = useState([])
     const [contador, setContador] = useState(1)
@@ -107,7 +107,7 @@ export default function Streaming() {
     return (
         <>
             <style type="text/css">
-            {`
+                {`
             .item-4 {
             color: var(--amarelo) !important;
             border-bottom: 1px solid var(--amarelo);
