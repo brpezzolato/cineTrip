@@ -1,4 +1,3 @@
-
 import "./style.css";
 
 export default async function Serie({ params }) {
@@ -8,9 +7,17 @@ export default async function Serie({ params }) {
     const resposta = await fetch(`https://api.themoviedb.org/3/tv/${serieId}?api_key=${chave}&language=pt-BR&append_to_response=credits,videos`);
     const serie = await resposta.json();
 
-    const trailer = serie.videos && serie.videos.results.find(v => v.type === "Trailer" && v.site === "YouTube");
-    const diretor = serie.credits && serie.credits.crew.find(p => p.job === "Director");
+    const trailer = serie.videos && serie.videos.results.find(video => video.type === "Trailer" && video.site === "YouTube");
     const elenco = serie.credits && serie.credits.cast.slice(0, 5);
+
+    const statusTraduzido = {
+        "Returning Series": "Em exibição",
+        "Ended": "Finalizada",
+        "Canceled": "Cancelada",
+        "In Production": "Em produção",
+        "Planned": "Planejada",
+        "Pilot": "Episódio piloto"
+    };
 
     return (
         <>
@@ -79,10 +86,10 @@ export default async function Serie({ params }) {
                             <h2 className="info-rapida">Informações Rápidas</h2>
                             <ul className="list-unstyled mt-1 d-flex flex-column gap-1">
                                 <li><span>Idioma Original:</span> {serie.original_language.toUpperCase()}</li>
-                                <li><span>Temporadas:</span> {serie.number_of_seasons}</li>
+                                <li><span>Status:</span> {statusTraduzido[serie.status]}</li>
                                 <li><span>Episódios:</span> {serie.number_of_episodes}</li>
                                 <li><span>Classificação:</span> {serie.adult ? "+18" : "Livre"}</li>
-                                <li><span>Criador(es):</span> {serie.created_by?.map(p => p.name).join(", ") || "Não informado"}</li>
+                                <li><span>Criador(es):</span> {serie.created_by?.map(criador => criador.name).join(", ") || "Não informado"}</li>
                             </ul>
                             {trailer && (
                                 <div className="trailer">

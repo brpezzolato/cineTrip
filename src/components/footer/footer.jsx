@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="container">
                 <div className="row">
 
-                    <div className="col-12 col-md-4 mb-4 text-center text-md-start">
+                    <div className="col-12 col-md-4 mb-4 text-center text-md-start div-logo-footer">
                         <img src="/logo.png" alt="Logo CineTrip" className="footer-logo mb-3" />
                         <p className="footer-description">
                             CineTrip é sua plataforma para explorar o melhor do cinema e das séries.
@@ -15,7 +15,7 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <div className="col-6 col-md-2 mb-3">
+                    <div className="col-6 col-md-2 mb-3 navigation">
                         <h5 className="footer-title">Navegação</h5>
                         <ul className="nav flex-column">
                             <li><Link href="/" className="footer-link">Home</Link></li>
@@ -26,7 +26,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div className="col-6 col-md-2 mb-3">
+                    <div className="col-6 col-md-2 mb-3 navigation">
                         <h5 className="footer-title">Redes</h5>
                         <ul className="nav flex-column">
                             <li><a href="#" className="footer-link">Instagram</a></li>
@@ -35,9 +35,9 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div className="col-md-4 mb-3">
-                        <h5 className="footer-title">Newsletter</h5>
-                        <p className="footer-text">Receba atualizações sobre os melhores filmes da semana.</p>
+                    <div className="col-md-4 mb-3 newsletter">
+                        <h5 className="footer-title text-center">Newsletter</h5>
+                        <p className="footer-text text-center">Receba atualizações sobre os melhores filmes da semana.</p>
                         <form className="d-flex flex-column flex-sm-row gap-2">
                             <input
                                 type="email"

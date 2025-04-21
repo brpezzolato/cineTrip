@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function DropdownCategorias() {
     const [generos, setGeneros] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
     const chave = "de7216d4878c63a09391f1c1257f3f7b";
 
     useEffect(() => {
@@ -14,24 +15,27 @@ export default function DropdownCategorias() {
             .catch((err) => console.error("Erro ao buscar gêneros:", err));
     }, []);
 
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <li className="nav-item dropdown item-2">
-            <a
+        <li className={`nav-item dropdown item-2 ${isOpen ? "show" : ""}`}>
+            <button
                 className="nav-link dropdown-toggle color-nav categ text-nowrap"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                onClick={toggleDropdown}
+                aria-expanded={isOpen}
             >
                 Categorias
-            </a>
-            <ul className="dropdown-menu dropdown-generos">
-                <div className="d-flex flex-wrap" style={{ minWidth: "300px", maxWidth: "600px" }}>
+            </button>
+            <ul className={`dropdown-menu dropdown-generos ${isOpen ? "show" : ""}`}>
+                <div className="d-flex flex-wrap menu" style={{ minWidth: "350px", maxWidth: "600px" }}>
                     {generos.map((genero) => (
                         <li key={genero.id} className="col-4 mb-2">
                             <Link
                                 className="dropdown-item color-nav px-2"
                                 href={`/categorias/${genero.id}`}
+                                onClick={() => setIsOpen(false)} // Fecha ao clicar
                             >
                                 {genero.name}
                             </Link>
@@ -41,5 +45,4 @@ export default function DropdownCategorias() {
             </ul>
         </li>
     );
-
 }

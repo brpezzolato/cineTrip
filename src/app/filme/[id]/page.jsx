@@ -8,8 +8,8 @@ export default async function Filme({ params }) {
     const resposta = await fetch(`https://api.themoviedb.org/3/movie/${filmeId}?api_key=${chave}&language=pt-BR&append_to_response=credits,videos,watch/providers`);
     const filme = await resposta.json();
 
-    const trailer = filme.videos && filme.videos.results.find(v => v.type === "Trailer" && v.site === "YouTube");
-    const diretor = filme.credits && filme.credits.crew.find(p => p.job === "Director");
+    const trailer = filme.videos && filme.videos.results.find(video => video.type === "Trailer" && video.site === "YouTube");
+    const diretor = filme.credits && filme.credits.crew.find(pessoa => pessoa.job === "Director");
     const elenco = filme.credits && filme.credits.cast.slice(0, 5);
 
     return (
