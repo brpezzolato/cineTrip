@@ -4,17 +4,30 @@ export default function Contato() {
   const perguntasFrequentes = [
     {
       pergunta: "Como posso entrar em contato com a equipe do CineTrip?",
-      resposta: "Você pode nos mandar uma mensagem pelo formulário ao lado ou através do e-mail contato@cinetrip.com.",
+      resposta: "Você pode nos enviar uma mensagem diretamente pelo formulário de contato disponível em nosso site, ou, se preferir, enviar um e-mail para contato@cinetrip.com. Nossa equipe está sempre pronta para atender suas dúvidas, sugestões e parcerias. O prazo de resposta geralmente é de até 48 horas úteis.",
     },
     {
-      pergunta: "Vocês cobram alguma taxa para acessar os conteúdos?",
-      resposta: "Não! O CineTrip é totalmente gratuito. Nosso objetivo é compartilhar cultura e cinema com todos.",
+      pergunta: "O CineTrip é gratuito?",
+      resposta: "Sim! O CineTrip é uma plataforma 100% gratuita. Nosso objetivo é democratizar o acesso à cultura cinematográfica, proporcionando informações, curiosidades e dicas sobre filmes e séries para todos os amantes da sétima arte, sem qualquer tipo de cobrança ou assinatura.",
     },
     {
-      pergunta: "De onde vêm as informações dos filmes?",
-      resposta: "As informações vêm da API pública da The Movie Database (TMDb), uma base de dados colaborativa.",
+      pergunta: "De onde vêm as informações dos filmes exibidos no CineTrip?",
+      resposta: "As informações que disponibilizamos — como sinopses, notas, lançamentos e imagens — são fornecidas pela API pública da The Movie Database (TMDb), uma das maiores bases de dados de filmes e séries do mundo. Isso garante que o conteúdo esteja sempre atualizado, com dados confiáveis e de alta qualidade.",
+    },
+    {
+      pergunta: "O CineTrip possui aplicativo para dispositivos móveis?",
+      resposta: "Ainda não possuímos um aplicativo próprio para smartphones ou tablets. No entanto, nosso site é totalmente responsivo, ou seja, adaptado para funcionar perfeitamente em qualquer dispositivo, oferecendo uma navegação rápida, segura e intuitiva em celulares, notebooks e desktops.",
+    },
+    {
+      pergunta: "Posso sugerir filmes ou séries para serem adicionados ao CineTrip?",
+      resposta: "Claro! Adoramos receber sugestões da nossa comunidade. Se você conhece algum filme, série ou até mesmo documentário que gostaria de ver em destaque no CineTrip, entre em contato conosco pelo formulário de contato ou através do e-mail contato@cinetrip.com.",
+    },
+    {
+      pergunta: "Como o CineTrip se mantém financeiramente?",
+      resposta: "Atualmente, o CineTrip é um projeto independente, mantido com recursos próprios e o apoio de nossos parceiros. Futuramente, podemos considerar parcerias comerciais ou anúncios não invasivos para garantir a continuidade e evolução do projeto, sempre priorizando a melhor experiência para nossos usuários.",
     },
   ];
+
 
   return (
     <>
@@ -35,7 +48,7 @@ export default function Contato() {
         <div className="row g-5">
           {/* Formulário */}
           <div className="col-md-12 div-form">
-            <form className="d-flex flex-column gap-3">
+            <form className="d-flex flex-column gap-3 speak">
               <input type="text" placeholder="Seu nome" className="form-control border-secondary" />
               <input type="email" placeholder="Seu e-mail" className="form-control border-secondary" />
               <input type="text" placeholder="Assunto" className="form-control border-secondary" />

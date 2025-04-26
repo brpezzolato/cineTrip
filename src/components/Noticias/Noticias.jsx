@@ -1,18 +1,18 @@
 import Link from 'next/link';
-export default function Noticias({ data, horario, titulo, descricao, imagem }) {
+export default function Noticias({ noticia }) {
     return (
         <>
             <div className="blog-item">
                 <div className="blog-img">
-                    <img src={imagem} alt="" />
+                    <img src={noticia.imagem} alt="" />
                 </div>
                 <div className="blog-text">
-                    <span>{data} às {horario}</span>
-                    <h2>{titulo}</h2>
+                    <span>{noticia.data} às {noticia.horario}</span>
+                    <h2>{noticia.titulo}</h2>
                     <p>
-                        {descricao}
+                        {noticia.descricao}
                     </p>
-                    <Link href="#">
+                    <Link href={`noticia/${noticia.id}`}>
                         Ler Mais
                     </Link>
                 </div>

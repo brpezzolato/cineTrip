@@ -7,7 +7,7 @@ import Streamings from "@/components/Streamings/Streamings";
 import "./index.css";
 
 export default function Home() {
-  const [cabecalho, setCabecalho] = useState([]);
+  const [carrosel, setCarrosel] = useState([]);
   const [streaming, setstreaming] = useState([]);
   const [emAlta, setEmAlta] = useState([]);
   const [populares, setPopulares] = useState([]);
@@ -20,7 +20,7 @@ export default function Home() {
   useEffect(() => {
     fetch("/json/carrosel.json")
       .then(res => res.json())
-      .then(data => setCabecalho(data))
+      .then(data => setCarrosel(data))
       .catch(err => console.error("Erro ao carregar os dados do Carrosel:", err));
 
     //LER OS MAIS FALADOS
@@ -62,7 +62,7 @@ export default function Home() {
         }`}
       </style>
 
-      <Carrosel movies={cabecalho} />
+      <Carrosel movies={carrosel} />
 
       <div className="container">
         <div className="treanding">

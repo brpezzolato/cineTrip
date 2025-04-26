@@ -15,7 +15,7 @@
 
 body {
     line-height: 1.4;
-    background-color: var(--preto );
+    background-color: var(--preto);
 }
 
 img {
@@ -84,6 +84,7 @@ img {
     margin-left: 73%;
     background: var(--azulEscuro);
     color: #fff;
+    display: flex;
     padding: 0.25rem 1rem;
 }
 
@@ -164,6 +165,7 @@ img {
     font-weight: 300;
     display: block;
     padding-bottom: 0.5rem;
+    color: var(--exDark);
 }
 
 .blog-text h2 {
@@ -171,6 +173,7 @@ img {
     padding: 1rem 0;
     font-size: 1.65rem;
     font-weight: 500;
+    color: var(--preto);
 }
 
 .blog-text p {
@@ -178,6 +181,7 @@ img {
     font-size: 1.1rem;
     opacity: 0.9;
     padding-bottom: 1.2rem;
+    color: var(--preto);
 }
 
 .blog-text a {

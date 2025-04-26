@@ -28,7 +28,7 @@ export default function Carrosel({ movies = [], tipo }) {
                         0: { slidesPerView: 1.5 },
                         576: { slidesPerView: 2 },
                         768: { slidesPerView: 3 },
-                        1024: { slidesPerView: 4 },
+                        1024: { slidesPerView: 4.7 },
                         1324: { slidesPerView: 5 },
                     }}
                 >

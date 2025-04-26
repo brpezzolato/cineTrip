@@ -19,7 +19,8 @@ body {
 
 .nao-encontrado {
     color: var(--branco);
-    margin-top: 15%
+    margin-top: 15%;
+    margin-bottom: 15%;
 }
 
 .nao-encontrado span {

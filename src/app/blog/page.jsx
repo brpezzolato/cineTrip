@@ -47,14 +47,10 @@ export default async function Blog() {
                         <p>fique por dentro das últimas noticias do mundo cinematográfico</p>
                     </div>
                     <div className="blog-content">
-                        {noticiasData.map((desc, index) => (
+                        {noticiasData.map((noticia, index) => (
                             <div key={index} className="noticias">
                                 <Noticias
-                                    imagem={desc.imagem}
-                                    titulo={desc.titulo}
-                                    descricao={desc.descricao}
-                                    data={desc.data}
-                                    horario={desc.horario}
+                                    noticia={noticia}
                                 />
                             </div>
                         ))}

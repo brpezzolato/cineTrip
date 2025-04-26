@@ -5,3 +5,7 @@
   --cinzaEscuro: #131313;
   --preto: black;
 }
+
+body {
+  background-color: var(--preto);
+}
