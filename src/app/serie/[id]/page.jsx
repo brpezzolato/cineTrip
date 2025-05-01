@@ -30,7 +30,7 @@ export default async function Serie({ params }) {
                     <div className="info">
                         <h1>{serie.name} ({new Date(serie.first_air_date).getFullYear()})</h1>
                         <div className="paragarafos">
-                            <p className="pb-0"><i className="bi bi-star"></i> {serie.vote_average}</p>
+                            <p className="pb-0"><i className="bi bi-star"></i> {serie.vote_average.toFixed(1)}</p>
                             <p><i className="bi bi-cassette"></i> {serie.genres.map(generos => generos.name).join(", ")}</p>
                             <p><i className="bi bi-projector"></i> {serie.number_of_seasons} Temporadas</p>
                             <p><i className="bi bi-calendar-event"></i> Estreia: {serie.first_air_date}</p>
@@ -47,15 +47,21 @@ export default async function Serie({ params }) {
                             <div className="d-flex flex-wrap gap-5">
                                 <div className="sinopse">
                                     <h2>Sinopse</h2>
-                                    <p>{serie.overview}</p>
+                                    {serie.overview ? <p>{serie.overview}</p> : <p>Sinopse <span>não disponível</span> desculpe</p>}
                                 </div>
                             </div>
 
                             <div className="elenco">
                                 <h2>Elenco Principal</h2>
-                                {elenco.map(ator => (
-                                    <li key={ator.id}>{ator.name} como <span>{ator.character}</span><br /></li>
-                                ))}
+                                {elenco.length > 0 ? (
+                                    <div className="l">
+                                        {elenco.map(ator => (
+                                            <li key={ator.id}>{ator.name} como <span>{ator.character}</span><br /></li>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p>Elenco <span>não disponível</span>, desculpe</p>
+                                )}
                             </div>
 
                             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -91,9 +97,9 @@ export default async function Serie({ params }) {
                                 <li><span>Classificação:</span> {serie.adult ? "+18" : "Livre"}</li>
                                 <li><span>Criador(es):</span> {serie.created_by?.map(criador => criador.name).join(", ") || "Não informado"}</li>
                             </ul>
-                            {trailer && (
-                                <div className="trailer">
-                                    <h2 className="pb-2">Trailer</h2>
+                            <div className="trailer">
+                                <h2 className="pb-2">Trailer</h2>
+                                {trailer ? <>
                                     <p className="mt-2">{serie.name}</p>
                                     <button
                                         type="button"
@@ -103,8 +109,8 @@ export default async function Serie({ params }) {
                                     >
                                         Ver Trailer
                                     </button>
-                                </div>
-                            )}
+                                </> : <p>Trailer <span>não disponível</span>, desculpe</p>}
+                            </div>
                         </div>
                     </div>
                 </div>

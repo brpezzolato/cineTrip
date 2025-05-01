@@ -12,6 +12,10 @@ body {
     color: var(--branco);
 }
 
+.titulo span {
+    color: var(--amarelo);
+}
+
 .sub-titulo {
     color: var(--branco);
     font-weight: normal;
@@ -24,7 +28,11 @@ body {
 }
 
 .speak {
-    width: 50%;
+    width: 100%;
+}
+
+.img-speak {
+    border-radius: 15px;
 }
 
 form input,

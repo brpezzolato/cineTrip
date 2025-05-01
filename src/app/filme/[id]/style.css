@@ -3,6 +3,10 @@ body {
     color: var(--branco);
 }
 
+span {
+    color: var(--amarelo);
+}
+
 .backdrop {
     background-size: cover;
     background-position: center;

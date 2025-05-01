@@ -9,3 +9,8 @@
 body {
   background-color: var(--preto);
 }
+
+.not-found {
+  margin-top: 30vh;
+  margin-bottom: 30vh;
+}

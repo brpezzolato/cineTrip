@@ -2,7 +2,7 @@
     {
         "id": 1,
         "nome": "Superman",
-        "imagem": "./noticiaSuperMan.png",
+        "imagem": "./noticias/noticiaSuperMan.png",
         "banner": "/bannerNoticia/bannerSuperMan.png",
         "titulo": "Produtos oficiais de “Superman” dão spoiler de personagens",
         "subtitulo": "Imagens do filme que será lançado em 2025 vazaram e mostraram detalhes dos personagens",
@@ -14,7 +14,7 @@
     {
         "id": 2,
         "nome": "Ainda Estou Aqui",
-        "imagem": "./noticiaEstouAqui.png",
+        "imagem": "./noticias/noticiaEstouAqui.png",
         "banner": "/bannerNoticia/bannerAindaEstouAqui.png",
         "titulo": "“Ainda Estou Aqui” chega ao streaming após 5 meses nos cinemas",
         "subtitulo": "Título venceu o Oscar de Melhor Filme Internacional, tornando-se o primeiro brasileiro a conquistar o prêmio",
@@ -26,7 +26,7 @@
     {
         "id": 3,
         "nome": "O Esquema Fenício",
-        "imagem": "./noticiaNovoFilme.png",
+        "imagem": "./noticias/noticiaNovoFilme.png",
         "banner": "/bannerNoticia/bannerNovoFilme.png",
         "titulo": "Novo filme de Wes Anderson ganha primeiro trailer; assista",
         "subtitulo": "“O Esquema Fenício” estreia em 29 de maio no Brasil",
@@ -38,7 +38,7 @@
     {
         "id": 4,
         "nome": "Star Wars",
-        "imagem": "./noticiaStarWars.png",
+        "imagem": "./noticias/noticiaStarWars.png",
         "banner": "/bannerNoticia/bannerStarWars.png",
         "titulo": "“Star Wars: A Vingança dos Sith” volta aos cinemas para celebrar 20 anos",
         "subtitulo": "Episódio 3 da saga foi lançado em 2005",
@@ -50,7 +50,7 @@
     {
         "id": 5,
         "nome": "Casamento Zendaya",
-        "imagem": "./noticiaCasamento.png",
+        "imagem": "./noticias/noticiaCasamento.png",
         "banner": "/bannerNoticia/bannerCasamento.png",
         "titulo": "Estilista de Zendaya atualiza planos de casamento da atriz com Tom Holland",
         "subtitulo": "Segundo Law Roach, a cerimônia está \"longe de acontecer\" devido à agenda das duas estrelas",
@@ -62,7 +62,7 @@
     {
         "id": 6,
         "nome": "Oscar Novo",
-        "imagem": "./noticiaOscar.png",
+        "imagem": "./noticias/noticiaOscar.png",
         "banner": "/bannerNoticia/bannerOscar.png",
         "titulo": "Oscar: Academia anuncia prêmio para dublês a partir de 2028",
         "subtitulo": "Nova categoria busca reconhecer profissional presente em diversos filmes, principalmente de ação",
@@ -74,7 +74,7 @@
     {
         "id": 7,
         "nome": "Minecraft",
-        "imagem": "./noticiaMinecraft.png",
+        "imagem": "./noticias/noticiaMinecraft.png",
         "banner": "/bannerNoticia/bannerMinecraft.png",
         "titulo": "Filme de Minecraft tem primeiras imagens divulgadas e empolga fãs",
         "subtitulo": "Jason Momoa protagoniza adaptação do jogo que marcou gerações",
@@ -86,7 +86,7 @@
     {
         "id": 8,
         "nome": "A Lista da Minha Vida",
-        "imagem": "./noticiaListaVida.png",
+        "imagem": "./noticias/noticiaListaVida.png",
         "banner": "/bannerNoticia/bannerListaVida.png",
         "titulo": "“A Lista da Minha Vida” emociona público em pré-estreia nacional",
         "subtitulo": "Filme brasileiro sobre juventude e sonhos ganha destaque",
@@ -98,7 +98,7 @@
     {
         "id": 9,
         "nome": "Rita Lee",
-        "imagem": "./noticiaRitaLee.png",
+        "imagem": "./noticias/noticiaRitaLee.png",
         "banner": "/bannerNoticia/bannerRitaLee.png",
         "titulo": "Rita Lee terá filme biográfico com estreia no segundo semestre",
         "subtitulo": "Filme homenageia a vida e carreira da rainha do rock brasileiro",
@@ -109,7 +109,7 @@
     {
         "id": 10,
         "nome": "Tempo de Guerra",
-        "imagem": "./noticiaTempoGuerra.png",
+        "imagem": "./noticias/noticiaTempoGuerra.png",
         "banner": "/bannerNoticia/bannerTempoGuerra.png",
         "titulo": "“Tempo de Guerra” retrata missão real da Marinha que deu errado; conheça",
         "subtitulo": "Filme foi coescrito e codirigido pelo veterano Ray Mendoza, que conta a história da própria experiência",
@@ -121,7 +121,7 @@
     {
         "id": 11,
         "nome": "Beetlejuice 3",
-        "imagem": "./noticiaBeetlejuice.png",
+        "imagem": "./noticias/noticiaBeetlejuice.png",
         "banner": "/bannerNoticia/bannerBeetlejuice.png",
         "titulo": "Diretor da Warner faz planos para “Beetlejuice 3”: “Muito em breve”",
         "subtitulo": "Mike De Luca planeja continuação de \"Os Fantasmas Ainda Se Divertem\"",
@@ -132,7 +132,7 @@
     {
         "id": 12,
         "nome": "Morte de Nicky Katt",
-        "imagem": "./noticiaNickyKatt.png",
+        "imagem": "./noticias/noticiaNickyKatt.png",
         "banner": "/bannerNoticia/bannerNickyKatt.png",
         "titulo": "Nicky Katt, astro do clássico “Escola do Rock”, morre aos 54 anos",
         "subtitulo": "A causa da morte do artista norte-americano não foi comunicada",
@@ -144,7 +144,7 @@
     {
         "id": 13,
         "nome": "Sequência Hollywood",
-        "imagem": "./noticiaSequenciaHollywood.png",
+        "imagem": "./noticias/noticiaSequenciaHollywood.png",
         "banner": "/bannerNoticia/bannerSequenciaHollywood.png",
         "titulo": "“Era uma vez em… Hollywood”: o que se sabe sobre a sequência",
         "subtitulo": "Novo filme terá como foco o personagem de Brad Pitt e poderá ser filmado a partir de julho deste ano",
@@ -156,7 +156,7 @@
     {
         "id": 14,
         "nome": "Walter Salles",
-        "imagem": "./noticiaWalterSalles.png",
+        "imagem": "./noticias/noticiaWalterSalles.png",
         "banner": "/bannerNoticia/bannerWalterSalles.png",
         "titulo": "Walter Salles revela detalhes de documentário sobre Sócrates",
         "subtitulo": "Cineasta ainda falou sobre a influência de “Ainda Estou Aqui” entre os jovens em evento realizado no Catar",
@@ -168,7 +168,7 @@
     {
         "id": 15,
         "nome": "Avatar: Fogo e Cinzas",
-        "imagem": "./noticiaAvatar.png",
+        "imagem": "./noticias/noticiaAvatar.png",
         "banner": "/bannerNoticia/bannerAvatar.png",
         "titulo": "“Avatar: Fogo e Cinzas”: veja as primeiras reações ao 3º filme da franquia",
         "subtitulo": "Prévia do novo filme de James Cameron foi exibida no Cinemacon na quinta-feira (3)",
@@ -180,7 +180,7 @@
     {
         "id": 16,
         "nome": "Homem Aranha",
-        "imagem": "./noticiaHomemAranha.png",
+        "imagem": "./noticias/noticiaHomemAranha.png",
         "banner": "/bannerNoticia/bannerHomemAranha.png",
         "titulo": "“Homem-Aranha 4” ganha data de estreia e título oficial; veja",
         "subtitulo": "Filme terá Tom Holland, Zendaya e Sadie Sink no elenco",
@@ -192,7 +192,7 @@
     {
         "id": 17,
         "nome": "Ainda Estou Aqui",
-        "imagem": "./noticiaSessaoGratuita.png",
+        "imagem": "./noticias/noticiaSessaoGratuita.png",
         "banner": "/bannerNoticia/bannerSessaoGratuita.png",
         "titulo": "“Ainda Estou Aqui” tem sessões gratuitas no RJ; saiba como assistir",
         "subtitulo": "Filme será exibido quatro vezes por dia até quarta-feira (2) no complexo Reserva Cultural, em Niterói",
@@ -204,7 +204,7 @@
     {
         "id": 18,
         "nome": "Garfield",
-        "imagem": "./noticiaGarfield.png",
+        "imagem": "./noticias/noticiaGarfield.png",
         "banner": "/bannerNoticia/bannerGarfield.png",
         "titulo": "Garfield: saiba quais filmes levaram o personagem à tela do cinema",
         "subtitulo": "Gato laranja e preguiçoso foi criado por Jim Davis em quadrinhos no final dos anos 1970",

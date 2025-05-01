@@ -29,9 +29,9 @@ export default function Footer() {
                     <div className="col-6 col-md-2 mb-3 navigation">
                         <h5 className="footer-title">Redes</h5>
                         <ul className="nav flex-column">
-                            <li><a href="#" className="footer-link">Instagram</a></li>
-                            <li><a href="#" className="footer-link">YouTube</a></li>
-                            <li><a href="#" className="footer-link">Discord</a></li>
+                            <li><a href="https://www.instagram.com/" className="footer-link">Instagram</a></li>
+                            <li><a href="https://www.youtube.com/" className="footer-link">YouTube</a></li>
+                            <li><a href="https://discord.com/" className="footer-link">Discord</a></li>
                         </ul>
                     </div>
 
@@ -52,12 +52,12 @@ export default function Footer() {
                 <div className="border-top mt-4 pt-3 pb-2 d-flex flex-column flex-md-row justify-content-between align-items-center">
                     <p className="mb-0 text-white-50">© 2025 CineTrip. Todos os direitos reservados.</p>
                     <div className="d-flex gap-3 mt-2 mt-md-0">
-                        <a href="#" className="footer-social"><i className="bi bi-instagram"></i></a>
-                        <a href="#" className="footer-social"><i className="bi bi-youtube"></i></a>
-                        <a href="#" className="footer-social"><i className="bi bi-discord"></i></a>
+                        <a href="https://www.instagram.com/" className="footer-social"><i className="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com/" className="footer-social"><i className="bi bi-youtube"></i></a>
+                        <a href="https://discord.com/" className="footer-social"><i className="bi bi-discord"></i></a>
                     </div>
                 </div>
             </div>
         </footer>
-    );s
+    ); s
 }

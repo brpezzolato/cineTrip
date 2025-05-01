@@ -6,7 +6,6 @@ import { Navigation } from "swiper/modules";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
-import "./CarroselCategorias.css";
 
 export default function CarroselCategorias() {
   const [categorias, setCategorias] = useState([]);
@@ -29,12 +28,13 @@ export default function CarroselCategorias() {
         spaceBetween={20}
         navigation={true}
         modules={[Navigation]}
-        className="swiper-categorias pb-5"
+        className="swiper-categorias"
         breakpoints={{
-          320: { slidesPerView: 2 },
-          576: { slidesPerView: 3 },
-          768: { slidesPerView: 4 },
-          1024: { slidesPerView: 4.7 },
+          0: { slidesPerView: 1.8 },
+          576: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          990: { slidesPerView: 3.8 },
+          1024: { slidesPerView: 5 },
           1324: { slidesPerView: 5 },
         }}
       >
@@ -50,7 +50,7 @@ export default function CarroselCategorias() {
                   alt={categoria.nome}
                   className="genero-imagem"
                   onError={(e) => {
-                    e.currentTarget.src = "/imagens-generos/default.jpg";
+                    e.currentTarget.src = "https://placehold.co/600x400?text=Sem+imagem";
                   }}
                 />
               </div>

@@ -42,12 +42,12 @@ export default function Contato() {
 
       <div className="container text-white pt-5">
         <div className="header-cat pb-5">
-          <h1 className="titulo text-start">Fale Conosco</h1>
+          <h1 className="titulo text-start">Fale <span>Conosco</span></h1>
         </div>
 
         <div className="row g-5">
           {/* Formulário */}
-          <div className="col-md-12 div-form">
+          <div className="col-md-6 div-form">
             <form className="d-flex flex-column gap-3 speak">
               <input type="text" placeholder="Seu nome" className="form-control border-secondary" />
               <input type="email" placeholder="Seu e-mail" className="form-control border-secondary" />
@@ -56,11 +56,16 @@ export default function Contato() {
               <button type="submit" className="btn btn btn-outline-warning">Enviar</button>
             </form>
           </div>
+          <div className="col-md-6">
+            <img src="/falecinetrip.png" 
+            className="img-fluid img-speak"
+            />
+          </div>
         </div>
 
         {/* FAQ */}
         <div className="pt-5">
-          <h2 className="mb-4 text-warning">Perguntas Frequentes</h2>
+          <h2 className="mb-4 titulo">Pergunta <span>Frequentes</span></h2>
           <div className="accordion" id="faqAccordion">
             {perguntasFrequentes.map((item, index) => (
               <div className="accordion-item bg-dark text-white border-secondary" key={index}>

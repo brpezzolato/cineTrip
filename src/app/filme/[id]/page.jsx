@@ -23,7 +23,7 @@ export default async function Filme({ params }) {
                     <div className="info">
                         <h1>{filme.title} ({new Date(filme.release_date).getFullYear()})</h1>
                         <div className="paragarafos">
-                            <p className="pb-0"><i className="bi bi-star"></i> {filme.vote_average}</p>
+                            <p className="pb-0"><i className="bi bi-star"></i> {filme.vote_average.toFixed(1)}</p>
                             <p><i className="bi bi-cassette"></i> {filme.genres.map(generos => generos.name).join(", ")}</p>
                             <p><i className="bi bi-stopwatch"></i> {filme.runtime} min</p>
                             <p><i className="bi bi-calendar-event"></i> Lançamento: {filme.release_date}</p>
@@ -39,18 +39,20 @@ export default async function Filme({ params }) {
                         <div className="d-flex flex-wrap gap-5">
                             <div className="sinopse">
                                 <h2>Sinopse</h2>
-                                <p>{filme.overview}</p>
+                                {filme.overview ? <p>{filme.overview}</p> : <p>Sinopse <span>não disponível</span> desculpe</p>}
                             </div>
                         </div>
 
-                        {elenco.length > 0 && (
-                            <div className="elenco">
-                                <h2>Elenco Principal</h2>
-                                {elenco.map(ator => (
-                                    <li key={ator.id}>{ator.name} como <span>{ator.character}</span><br /></li>
-                                ))}
-                            </div>
-                        )}
+                        <div className="elenco">
+                            <h2>Elenco Principal</h2>
+                            {elenco.length > 0 ? (
+                                <div className="l">
+                                    {elenco.map(ator => (
+                                        <li key={ator.id}>{ator.name} como <span>{ator.character}</span><br /></li>
+                                    ))}
+                                </div>
+                            ) : (<p>Elenco <span>não disponível</span>, desculpe</p>)}
+                        </div>
 
                         <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div className="modal-dialog modal-lg modal-dialog-centered">
@@ -64,7 +66,6 @@ export default async function Filme({ params }) {
                                             height="400"
                                             src={`https://www.youtube.com/embed/${trailer ? trailer.key : ""}`}
                                             title="Trailer"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen
                                         ></iframe>
                                     </div>
@@ -86,9 +87,9 @@ export default async function Filme({ params }) {
                             <li><span>Diretor:</span> {diretor ? diretor.name : "Não informado"}</li>
                         </ul>
 
-                        {trailer && (
-                            <div className="trailer">
-                                <h2 className="pb-2">Trailer</h2>
+                        <div className="trailer">
+                            <h2 className="pb-2">Trailer</h2>
+                            {trailer ? <>
                                 <p className="mt-2">{filme.title}</p>
                                 <button
                                     type="button"
@@ -98,8 +99,8 @@ export default async function Filme({ params }) {
                                 >
                                     Ver Trailer
                                 </button>
-                            </div>
-                        )}
+                            </> : <p>Trailer <span>não disponível</span>, desculpe</p>}
+                        </div>
                     </div>
                 </div>
             </div>
