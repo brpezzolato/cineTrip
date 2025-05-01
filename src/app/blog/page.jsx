@@ -2,6 +2,10 @@ import Oscar from "@/components/Oscar/Oscar";
 import Noticias from "@/components/Noticias/Noticias";
 import "./blog.css";
 
+export const metadata = {
+    title: 'CineTrip | Blog',
+  };
+
 export default async function Blog() {
     const oscarRes = await fetch("http://localhost:3000/json/oscar.json");
     const noticiasRes = await fetch("http://localhost:3000/json/noticias.json");

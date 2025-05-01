@@ -20,3 +20,12 @@ body {
 .titulo-destaque span {
     color: var(--amarelo);
 }
+
+.titulo-destaque a {
+    text-decoration-line: none !important;
+}
+
+.titulo-destaque a:hover {
+    text-decoration-line: underline !important;
+    color: var(--amarelo);
+}

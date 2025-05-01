@@ -104,9 +104,8 @@ body {
     height: 1px;
     margin-top: 3%;
 }
-
 .corpoNoticia {
-    padding: 2% 11%;
+    padding: 2% 6%;
 }
 
 .corpoNoticia p {
@@ -124,4 +123,5 @@ body {
     .circle {
         margin-right: 4px;
     }
+
 }

@@ -22,7 +22,7 @@ export default function CarroselCategorias() {
   return (
     <>
       <div className="titulo-destaque mt-5 mb-5">
-        <h1>Principais <span>Streamings</span></h1>
+        <h1>Streamings mais <span>famosos</span></h1>
       </div>
 
       <Swiper
@@ -34,13 +34,13 @@ export default function CarroselCategorias() {
         breakpoints={{
           0: { slidesPerView: 1 },
           280: { slidesPerView: 1.4 },
-          355: { slidesPerView: 2},
-          390: { slidesPerView: 2.3 },
-          580: { slidesPerView: 2.8 },
+          347: { slidesPerView: 1.8 },
+          396: { slidesPerView: 2 },
+          500: { slidesPerView: 2.4 },
           768: { slidesPerView: 3 },
           992: { slidesPerView: 4 },
           1146: { slidesPerView: 4.5 },
-          1246: { slidesPerView: 5 }
+          1246: { slidesPerView: 5.8 }
         }}
       >
         {streaming.map((item) => (

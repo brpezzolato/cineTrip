@@ -3,7 +3,7 @@
   --amarelo: #FFC800;
   --azulEscuro: #1E1E4F;
   --cinzaEscuro: #131313;
-  --preto: black;
+  --preto: #000;
 }
 
 body {
@@ -11,6 +11,16 @@ body {
 }
 
 .not-found {
-  margin-top: 30vh;
-  margin-bottom: 30vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.not-found img {
+  width: 70vh;
+  margin-bottom: 2%;
+}
+
+::selection {
+  background-color: var(--amarelo);
+  color: var(--preto);
 }

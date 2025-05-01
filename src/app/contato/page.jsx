@@ -1,5 +1,9 @@
 import "./contato.css";
 
+export const metadata = {
+  title: 'CineTrip | Fale Conosco',
+};
+
 export default function Contato() {
   const perguntasFrequentes = [
     {

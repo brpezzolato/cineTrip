@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import Carrosel from "@/components/Carrosel/Carrossel";
 import CarroselCard from "@/components/CarroselCard/CarroselCard";
-import Streamings from "@/components/Streamings/Streamings";
+import CarroselStr from "@/components/CarroselStreamings/CarroselStreamings";
 import "./index.css";
+import Head from "next/head";
+
 
 export default function Home() {
   const [cabecalho, setCabecalho] = useState([]);
@@ -55,6 +57,9 @@ export default function Home() {
 
   return (
     <>
+     <Head>
+        <title>CineTrip | Home</title>
+      </Head>
       <style type="text/css">
         {`.item-1 {
           color: var(--amarelo) !important;
@@ -101,23 +106,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="streamings-home">
-          <div className="titulo-destaque mt-5 mb-5">
-            <h1>Streamings mais <span>famosos</span></h1>
-          </div>
-
-          <div className="img-streamings">
-            <div className="design-str d-flex justify-content-center gap-5 flex-wrap pb-5">
-              {streaming.map((item) => (
-                <Streamings key={item.id} item={item} />
-              ))}
-            </div>
-          </div>
+        <div className="streamings-home mb-4">
+          <CarroselStr />
         </div>
       </div>
     </>
   )
 }
-
-
-

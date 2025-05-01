@@ -1,8 +1,8 @@
 "use client"
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import CarroselCard from "@/components/CarroselCard/CarroselCard";
-import Streamings from "@/components/Streamings/Streamings";
 import CarroselStreamings from "@/components/CarroselStreamings/CarroselStreamings";
 import "./streaming.css";
 
@@ -85,7 +85,7 @@ export default function BotoesStreamings() {
 
                 <div className="treanding">
                     <div className="titulo-destaque mt-5 mb-5">
-                        <h1>Top 10 da <span>Netflix</span></h1>
+                        <h1>Top 10 da <Link href="/streaming/8"><span>Netflix</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
                         <CarroselCard id="carrosel-netflix" movies={emAltaNetflix.slice(0, 10)} tipo="movie" />
@@ -94,7 +94,7 @@ export default function BotoesStreamings() {
 
                 <div className="treanding">
                     <div className="titulo-destaque mt-5 mb-5">
-                        <h1>Top 10 da <span>Prime vídeo</span></h1>
+                        <h1>Top 10 da <Link href="/streaming/119"><span>Prime vídeo</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
                         <CarroselCard id="carrosel-prime" movies={emAltaPrime.slice(0, 10)} tipo="movie" />
@@ -103,7 +103,7 @@ export default function BotoesStreamings() {
 
                 <div className="treanding">
                     <div className="titulo-destaque mt-5 mb-5">
-                        <h1>Top 10 da <span>Disney +</span></h1>
+                        <h1>Top 10 da <Link href="/streaming/337"><span>Disney +</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
                         <CarroselCard id="carrosel-disney" movies={emAltaDisney.slice(0, 10)} tipo="movie" />
@@ -112,7 +112,7 @@ export default function BotoesStreamings() {
 
                 <div className="treanding">
                     <div className="titulo-destaque mt-5 mb-5">
-                        <h1>Top 10 da <span>Apple TV+</span></h1>
+                        <h1>Top 10 da <Link href="/streaming/350"><span>Apple TV+</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
                         <CarroselCard id="carrosel-apple" movies={emAltaApple.slice(0, 10)} tipo="movie" />
@@ -121,7 +121,7 @@ export default function BotoesStreamings() {
 
                 <div className="treanding">
                     <div className="titulo-destaque mt-5 mb-5">
-                        <h1>Top 10 da <span>Paramount</span></h1>
+                        <h1>Top 10 da <Link href="/streaming/531"><span>Paramount</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
                         <CarroselCard id="carrosel-paramount" movies={emAltaParamount.slice(0, 10)} tipo="movie" />
@@ -130,7 +130,7 @@ export default function BotoesStreamings() {
 
                 <div className="treanding">
                     <div className="titulo-destaque mt-5 mb-5">
-                        <h1>Top 10 da <span>Max</span></h1>
+                        <h1>Top 10 da <Link href="/streaming/1899"><span>Max</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
                         <CarroselCard id="carrosel-max" movies={emAltaMax.slice(0, 10)} tipo="movie" />
@@ -139,7 +139,7 @@ export default function BotoesStreamings() {
 
                 <div className="treanding">
                     <div className="titulo-destaque mt-5 mb-5">
-                        <h1>Top 10 da <span>Globo</span></h1>
+                        <h1>Top 10 da <Link href="/streaming/307"><span>Globo Play</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
                         <CarroselCard id="carrosel-globo" movies={emAltaGlobo.slice(0, 10)} tipo="movie" />

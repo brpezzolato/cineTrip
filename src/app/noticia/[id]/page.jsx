@@ -25,7 +25,7 @@ export default async function Noticia({ params }) {
                         <p>{resultado.subtitulo}</p>
                     </div>
                     <div className="datas">
-                        <p>{resultado.data}</p>
+                        <p>{resultado.autor}</p>
                         <div className="line"></div>
                         <p>{resultado.data}, às {resultado.horario}</p>
                     </div>
@@ -54,8 +54,10 @@ export default async function Noticia({ params }) {
                     </div>
                 </div>
 
-                <div className="corpoNoticia">
-                    <p style={{ whiteSpace: 'pre-line' }}>{resultado.conteudo}</p>
+                <div className="container">
+                    <div className="corpoNoticia">
+                        <p style={{ whiteSpace: 'pre-line' }}>{resultado.conteudo}</p>
+                    </div>
                 </div>
             </section>
         </>

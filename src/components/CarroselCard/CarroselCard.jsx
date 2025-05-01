@@ -25,15 +25,14 @@ export default function Carrosel({ movies = [], tipo }) {
                     spaceBetween={0}
                     loop={false}
                     breakpoints={{
-                        0: { slidesPerView: 1 },
-                        300: {slidesPerView: 1.3},
-                        334: {slidesPerView: 1.5},
-                        355: {slidesPerView: 2},
-                        390: { slidesPerView: 2.2 },
-                        768: { slidesPerView: 3 },
-                        994:{ slidesPerView: 4 }, 
-                        1024: { slidesPerView: 4.3 },
-                        1324: { slidesPerView: 5 },
+                        0: { slidesPerView: 1.3, spaceBetween: 12 },
+                        330: { slidesPerView: 1.6, spaceBetween: 14 },
+                        480: { slidesPerView: 1.8, spaceBetween: 14 },
+                        768: { slidesPerView: 3, spaceBetween: 16 },
+                        1024: { slidesPerView: 4, spaceBetween: 16 },
+                        1280: { slidesPerView: 5.3, spaceBetween: 18 },
+                        1536: { slidesPerView: 6, spaceBetween: 20 },
+                        1800: { slidesPerView: 7, spaceBetween: 20 },
                     }}
                 >
                     {movies.map((item) => (
