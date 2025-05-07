@@ -23,7 +23,6 @@ export default function Busca() {
                 .then(data => setFilmes(data.results || []))
                 .catch(error => console.error("Erro:", error))
                 .finally(() => {
-                    // Garante no mínimo 800ms de loading visual
                     setTimeout(() => {
                         setIsLoading(false)
                     }, 1000)
