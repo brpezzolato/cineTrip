@@ -1,5 +1,14 @@
-import Link from "next/link";
 import "./style.css";
+
+export async function generateMetadata({ params }) {
+    const filmeId = params.id;
+    const chave = "de7216d4878c63a09391f1c1257f3f7b"
+    const resposta = await fetch(
+        `https://api.themoviedb.org/3/movie/${filmeId}?api_key=${chave}&language=pt-BR`
+    );
+    const filme = await resposta.json();
+    return { title: `Cine Trip | ${filme.title}` };
+}
 
 export default async function Filme({ params }) {
     const filmeId = params.id;
@@ -14,6 +23,9 @@ export default async function Filme({ params }) {
 
     return (
         <>
+            <header>
+                <title>Cine Trip | {filme.title}</title>
+            </header>
             <div className="backdrop" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${filme.backdrop_path})` }}>
                 <div className="content-main d-flex flex-column flex-md-row align-items-center justify-content-center p-3 gap-5">
                     <img

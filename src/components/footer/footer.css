@@ -25,6 +25,10 @@
     color: #ccc;
 }
 
+.border-footer {
+    border-top: 1px solid var(--amarelo);
+}
+
 .footer-link {
     color: #ccc;
     text-decoration: none;

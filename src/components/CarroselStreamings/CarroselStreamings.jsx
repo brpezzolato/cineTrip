@@ -39,8 +39,8 @@ export default function CarroselCategorias() {
           500: { slidesPerView: 2.4 },
           768: { slidesPerView: 3 },
           992: { slidesPerView: 4 },
-          1146: { slidesPerView: 4.5 },
-          1246: { slidesPerView: 5.8 }
+          1146: { slidesPerView: 4.9 },
+          1246: { slidesPerView: 5.4 }
         }}
       >
         {streaming.map((item) => (

@@ -7,30 +7,34 @@ export const metadata = {
 export default function Contato() {
   const perguntasFrequentes = [
     {
-      pergunta: "Como posso entrar em contato com a equipe do CineTrip?",
-      resposta: "Você pode nos enviar uma mensagem diretamente pelo formulário de contato disponível em nosso site, ou, se preferir, enviar um e-mail para contato@cinetrip.com. Nossa equipe está sempre pronta para atender suas dúvidas, sugestões e parcerias. O prazo de resposta geralmente é de até 48 horas úteis.",
+      pergunta: "Como o CineTrip me ajuda a escolher um filme ou série para assistir?",
+      resposta: "O CineTrip oferece listas personalizadas, como 'Em Alta', 'Mais Bem Avaliados' e 'Lançamentos Recentes', todas atualizadas com dados da TMDb. Além disso, você encontra sinopses, avaliações e curiosidades sobre cada título, facilitando sua decisão com base no seu gosto.",
     },
     {
-      pergunta: "O CineTrip é gratuito?",
-      resposta: "Sim! O CineTrip é uma plataforma 100% gratuita. Nosso objetivo é democratizar o acesso à cultura cinematográfica, proporcionando informações, curiosidades e dicas sobre filmes e séries para todos os amantes da sétima arte, sem qualquer tipo de cobrança ou assinatura.",
+      pergunta: "As informações dos filmes e séries são confiáveis?",
+      resposta: "Sim. Utilizamos a API da The Movie Database (TMDb), uma das maiores e mais confiáveis fontes de dados do mundo do entretenimento. Isso garante sinopses, notas e imagens sempre atualizadas e precisas.",
     },
     {
-      pergunta: "De onde vêm as informações dos filmes exibidos no CineTrip?",
-      resposta: "As informações que disponibilizamos — como sinopses, notas, lançamentos e imagens — são fornecidas pela API pública da The Movie Database (TMDb), uma das maiores bases de dados de filmes e séries do mundo. Isso garante que o conteúdo esteja sempre atualizado, com dados confiáveis e de alta qualidade.",
+      pergunta: "Preciso criar uma conta para usar o CineTrip?",
+      resposta: "Não. O acesso à plataforma é totalmente livre e gratuito, sem necessidade de cadastro. Futuramente, funcionalidades extras poderão estar disponíveis para usuários registrados, mas o uso básico continuará aberto a todos.",
     },
     {
-      pergunta: "O CineTrip possui aplicativo para dispositivos móveis?",
-      resposta: "Ainda não possuímos um aplicativo próprio para smartphones ou tablets. No entanto, nosso site é totalmente responsivo, ou seja, adaptado para funcionar perfeitamente em qualquer dispositivo, oferecendo uma navegação rápida, segura e intuitiva em celulares, notebooks e desktops.",
+      pergunta: "Consigo ver onde assistir um filme ou série pelo CineTrip?",
+      resposta: "Em breve! Estamos trabalhando para integrar informações de onde assistir (streaming, aluguel ou compra), facilitando ainda mais sua experiência ao encontrar onde o conteúdo está disponível legalmente.",
     },
     {
-      pergunta: "Posso sugerir filmes ou séries para serem adicionados ao CineTrip?",
-      resposta: "Claro! Adoramos receber sugestões da nossa comunidade. Se você conhece algum filme, série ou até mesmo documentário que gostaria de ver em destaque no CineTrip, entre em contato conosco pelo formulário de contato ou através do e-mail contato@cinetrip.com.",
+      pergunta: "O CineTrip faz críticas ou apenas apresenta informações?",
+      resposta: "Nosso foco principal é informativo, mas também incluímos resumos com comentários e curiosidades que ajudam o público a entender melhor a proposta do título. Futuramente, também traremos seções com recomendações editoriais e reviews.",
     },
     {
-      pergunta: "Como o CineTrip se mantém financeiramente?",
-      resposta: "Atualmente, o CineTrip é um projeto independente, mantido com recursos próprios e o apoio de nossos parceiros. Futuramente, podemos considerar parcerias comerciais ou anúncios não invasivos para garantir a continuidade e evolução do projeto, sempre priorizando a melhor experiência para nossos usuários.",
+      pergunta: "Por que alguns filmes ou séries não aparecem no CineTrip?",
+      resposta: "Embora nosso acervo seja amplo, ele depende da base da TMDb. Alguns títulos muito novos, pouco conhecidos ou com restrições regionais podem não estar disponíveis. Mas estamos sempre atentos para incluir novos conteúdos assim que possível.",
     },
-  ];
+    {
+      pergunta: "É possível sugerir melhorias ou novos recursos para a plataforma?",
+      resposta: "Com certeza! Valorizamos muito o feedback da nossa comunidade. Use o formulário de contato ou envie um e-mail para contato@cinetrip.com com suas sugestões. Toda ideia é bem-vinda!",
+    },
+  ];  
 
 
   return (
@@ -61,7 +65,7 @@ export default function Contato() {
             </form>
           </div>
           <div className="col-md-6">
-            <img src="/falecinetrip.png" 
+            <img src="/mascot/falecinetrip.png" 
             className="img-fluid img-speak"
             />
           </div>

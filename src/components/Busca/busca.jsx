@@ -17,7 +17,7 @@ export default function Busca() {
                 <input
                     className="form-control search ps-3"
                     type="text"
-                    placeholder="Search"
+                    placeholder="Busque um título de filme ou série"
                     aria-label="Search"
                     value={valorBuscado}
                     onChange={(e) => { setValorBuscado(e.target.value) }}

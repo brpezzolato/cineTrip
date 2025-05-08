@@ -27,7 +27,7 @@ export default async function Blog() {
                     <div className="designtitle">
                         <div className="premio">
                             <h2>O Blog</h2>
-                            <img className="trofeu" src="/trofeuOscar.png" />
+                            <img className="trofeu" src="/noticias/trofeuOscar.png" />
                             <h2>ndica</h2>
                         </div>
                         <div className="subtitulo">

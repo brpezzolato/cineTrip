@@ -1,13 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
 import CarroselCategorias from "@/components/CarroselCategorias/CarrosselCategorias"
-import { Navigation } from "swiper/modules";
 import CarroselCard from "@/components/CarroselCard/CarroselCard";
-import Link from "next/link";
 import "./categorias.css";
 
 export default function Categorias() {
@@ -51,6 +46,9 @@ export default function Categorias() {
 
   return (
     <>
+      <header>
+        <title>Cine Trip | Categorias</title>
+      </header>
       <style type="text/css">
         {`
           .item-2 {
@@ -101,8 +99,8 @@ export default function Categorias() {
           </div>
         </div>
 
-          {/* Carrossel de Categorias */}
-    <CarroselCategorias />
+        {/* Carrossel de Categorias */}
+        <CarroselCategorias />
 
       </div>
     </>

@@ -8,9 +8,12 @@ export default async function Noticia({ params }) {
 
     const resultado = noticias.find(item => item.id === noticiaId);
 
-    return (
+    return (            
         <>
-            <style>{`
+            <header>
+                <title>Cine Trip | Notícias</title>
+            </header>
+<style>{`
                 .item-3 {
                     color: var(--amarelo) !important;
                     border-bottom: 1px solid var(--amarelo);

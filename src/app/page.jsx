@@ -5,12 +5,9 @@ import Carrosel from "@/components/Carrosel/Carrossel";
 import CarroselCard from "@/components/CarroselCard/CarroselCard";
 import CarroselStr from "@/components/CarroselStreamings/CarroselStreamings";
 import "./index.css";
-import Head from "next/head";
-
 
 export default function Home() {
   const [cabecalho, setCabecalho] = useState([]);
-  const [streaming, setstreaming] = useState([]);
   const [emAlta, setEmAlta] = useState([]);
   const [populares, setPopulares] = useState([]);
   const [cartaz, setCartaz] = useState([]);
@@ -48,19 +45,14 @@ export default function Home() {
       .then(response => response.json())
       .then(data => setAvaliados(data.results || []))
       .catch(error => console.error("Erro:", error));
-
-    fetch("/json/streaming.json")
-      .then(res => res.json())
-      .then(data => setstreaming(data))
-      .catch(err => console.error("Erro ao carregar os dados do Carrosel:", err));
   }, []);
 
   return (
     <>
-     <Head>
-        <title>CineTrip | Home</title>
-      </Head>
-      <style type="text/css">
+      <header>
+        <title>Cine Club | Home</title>
+      </header>
+      <style>
         {`.item-1 {
           color: var(--amarelo) !important;
           border-bottom: 1px solid var(--amarelo);

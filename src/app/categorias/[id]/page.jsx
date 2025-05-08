@@ -140,10 +140,16 @@ export default function CategoriaPage() {
         setFilmes(filtrados);
       })
       .catch((err) => console.error("Erro ao carregar filmes:", err));
+
+    document.title = `Cine Trip | ${nomeGenero}`
+
   }, [id, contador]);
 
   return (
     <>
+      <header>
+        <title>Cine Trip | Categoria</title>
+      </header>
       <style type="text/css">
         {`
           .item-2 {

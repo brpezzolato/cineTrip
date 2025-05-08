@@ -49,7 +49,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border-top mt-4 pt-3 pb-2 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div className="border-footer mt-4 pt-3 pb-2 d-flex flex-column flex-md-row justify-content-between align-items-center">
                     <p className="mb-0 text-white-50">© 2025 CineTrip. Todos os direitos reservados.</p>
                     <div className="d-flex gap-3 mt-2 mt-md-0">
                         <a href="https://www.instagram.com/" className="footer-social"><i className="bi bi-instagram"></i></a>
@@ -59,5 +59,5 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
-    ); s
+    );
 }

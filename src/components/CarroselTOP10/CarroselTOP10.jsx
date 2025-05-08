@@ -6,18 +6,19 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
-import "./CarroselCard.css"
+import "./CarroselTOP10.css"
 
 export default function Carrosel({ movies = [], tipo }) {
     return (
         <>
             <style>
                 {`.movie-card:hover {
-                    transform: translateY(0px);
-                    filter: brightness(80%);
-                    transition: .5s;
-                }`}
+            transform: translateY(0px);
+            filter: brightness(80%);
+            transition: .5s;
+          }`}
             </style>
+
             <div className="container-fluid px-0">
                 <Swiper
                     modules={[Navigation]}
@@ -35,9 +36,18 @@ export default function Carrosel({ movies = [], tipo }) {
                         1800: { slidesPerView: 7, spaceBetween: 20 },
                     }}
                 >
-                    {movies.map((item) => (
+                    {movies.slice(0, 10).map((item, index) => (
                         <SwiperSlide key={item.id} className="slide-ajustado">
-                            <Card item={item} tipo={tipo} />
+                            <div className="top10-wrapper">
+                                <div className="numero-top10-wrapper">
+                                    <img
+                                        src={`/numeros/num${index + 1}.png`}
+                                        alt={`Top ${index + 1}`}
+                                        className="numero-top10"
+                                    />
+                                </div>
+                                <Card item={item} tipo={tipo} />
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>

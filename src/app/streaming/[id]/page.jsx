@@ -99,6 +99,9 @@ export default function Streaming() {
                 setSeries(resultados)
             })
             .catch(err => console.error("Erro ao carregar séries:", err))
+
+        document.title = `Cine Trip | ${nomeStreaming}`
+        
     }, [id_tmdb, contador])
 
     const resultados = filmes.concat(series)
@@ -106,13 +109,16 @@ export default function Streaming() {
 
     return (
         <>
+            <header>
+                <title>Cine Trip | Streaming</title>
+            </header>
             <style type="text/css">
                 {`
-            .item-4 {
-            color: var(--amarelo) !important;
-            border-bottom: 1px solid var(--amarelo);
-            }
-            `}
+                .item-4 {
+                color: var(--amarelo) !important;
+                border-bottom: 1px solid var(--amarelo);
+                }
+                `}
             </style>
             <div className="container container-str">
                 <div className="header-str">

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import CarroselCard from "@/components/CarroselCard/CarroselCard";
+import CarroselTOP10 from "@/components/CarroselTOP10/CarroselTOP10";
 import CarroselStreamings from "@/components/CarroselStreamings/CarroselStreamings";
 import "./streaming.css";
 
@@ -66,11 +66,20 @@ export default function BotoesStreamings() {
             .then(data => setEmAltaGlobo(data.results || []))
             .catch(error => console.error("Erro:", error));
 
+        //CLARO
+        fetch(`${url}discover/movie?api_key=${chave}&language=pt-BR&sort_by=popularity.desc&with_watch_providers=283&watch_region=BR&page=1`)
+            .then(response => response.json())
+            .then(data => setEmAltaGlobo(data.results || []))
+            .catch(error => console.error("Erro:", error));
+
 
     }, []);
 
     return (
         <>
+            <header>
+                <title>Cine Trip | Streaming</title>
+            </header>
             <style type="text/css">
                 {`
         .item-4 {
@@ -88,7 +97,7 @@ export default function BotoesStreamings() {
                         <h1>Top 10 da <Link href="/streaming/8"><span>Netflix</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
-                        <CarroselCard id="carrosel-netflix" movies={emAltaNetflix.slice(0, 10)} tipo="movie" />
+                        <CarroselTOP10 id="carrosel-netflix" movies={emAltaNetflix.slice(0, 10)} tipo="movie" />
                     </div>
                 </div>
 
@@ -97,7 +106,7 @@ export default function BotoesStreamings() {
                         <h1>Top 10 da <Link href="/streaming/119"><span>Prime vídeo</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
-                        <CarroselCard id="carrosel-prime" movies={emAltaPrime.slice(0, 10)} tipo="movie" />
+                        <CarroselTOP10 id="carrosel-prime" movies={emAltaPrime.slice(0, 10)} tipo="movie" />
                     </div>
                 </div>
 
@@ -106,7 +115,7 @@ export default function BotoesStreamings() {
                         <h1>Top 10 da <Link href="/streaming/337"><span>Disney +</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
-                        <CarroselCard id="carrosel-disney" movies={emAltaDisney.slice(0, 10)} tipo="movie" />
+                        <CarroselTOP10 id="carrosel-disney" movies={emAltaDisney.slice(0, 10)} tipo="movie" />
                     </div>
                 </div>
 
@@ -115,7 +124,7 @@ export default function BotoesStreamings() {
                         <h1>Top 10 da <Link href="/streaming/350"><span>Apple TV+</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
-                        <CarroselCard id="carrosel-apple" movies={emAltaApple.slice(0, 10)} tipo="movie" />
+                        <CarroselTOP10 id="carrosel-apple" movies={emAltaApple.slice(0, 10)} tipo="movie" />
                     </div>
                 </div>
 
@@ -124,7 +133,7 @@ export default function BotoesStreamings() {
                         <h1>Top 10 da <Link href="/streaming/531"><span>Paramount</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
-                        <CarroselCard id="carrosel-paramount" movies={emAltaParamount.slice(0, 10)} tipo="movie" />
+                        <CarroselTOP10 id="carrosel-paramount" movies={emAltaParamount.slice(0, 10)} tipo="movie" />
                     </div>
                 </div>
 
@@ -133,7 +142,7 @@ export default function BotoesStreamings() {
                         <h1>Top 10 da <Link href="/streaming/1899"><span>Max</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
-                        <CarroselCard id="carrosel-max" movies={emAltaMax.slice(0, 10)} tipo="movie" />
+                        <CarroselTOP10 id="carrosel-max" movies={emAltaMax.slice(0, 10)} tipo="movie" />
                     </div>
                 </div>
 
@@ -142,7 +151,7 @@ export default function BotoesStreamings() {
                         <h1>Top 10 da <Link href="/streaming/307"><span>Globo Play</span></Link></h1>
                     </div>
                     <div className="carrosel-trending">
-                        <CarroselCard id="carrosel-globo" movies={emAltaGlobo.slice(0, 10)} tipo="movie" />
+                        <CarroselTOP10 id="carrosel-globo" movies={emAltaGlobo.slice(0, 10)} tipo="movie" />
                     </div>
                 </div>
 

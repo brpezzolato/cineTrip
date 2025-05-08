@@ -1,5 +1,15 @@
 import "./style.css";
 
+export async function generateMetadata({ params }) {
+    const serieId = params.id;
+    const chave = "de7216d4878c63a09391f1c1257f3f7b";
+    const resposta = await fetch(
+        `https://api.themoviedb.org/3/tv/${serieId}?api_key=${chave}&language=pt-BR`
+    );
+    const serie = await resposta.json();
+    return { title: `Cine Trip | ${serie.name}` };
+}
+
 export default async function Serie({ params }) {
     const serieId = params.id;
     const chave = "de7216d4878c63a09391f1c1257f3f7b";

@@ -47,5 +47,12 @@
         "id_tmdb": 531,
         "imagem": "/streaming/4.png",
         "rota": "/streaming/531"
+    },
+    {
+        "id": 8,
+        "nome": "Claro TV+",
+        "id_tmdb": 283,
+        "imagem": "/streaming/8.png",
+        "rota": "/streaming/283"
     }
 ]

@@ -28,6 +28,7 @@ export default function Busca() {
                     }, 1000)
                 })
         }
+
     }, [valorBuscado])
 
 
@@ -62,6 +63,9 @@ export default function Busca() {
 
     return (
         <>
+            <header>
+                <title>Cine Trip | Busca</title>
+            </header>
             <div className="title pt-5 ps-2 ps-lg-5">
                 <h1 className="titulo">Resultados para: <span>{valorBuscado}</span></h1>
                 <h4 className="sub-titulo">Mídias encontradas: {filmesEncontrados.length}</h4>
