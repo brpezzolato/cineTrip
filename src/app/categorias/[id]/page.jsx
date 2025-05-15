@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import Card from "@/components/Card/Card";
-import Link from "next/link";
-import "./categorias.css";
+import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
+import Card from '@/components/Card/Card';
+import Link from 'next/link';
+import './categorias.css';
 
 export default function CategoriaPage() {
   const params = useParams();
@@ -12,7 +12,7 @@ export default function CategoriaPage() {
   const [filmes, setFilmes] = useState([]);
   const [contador, setContador] = useState(1);
 
-  const chave = "de7216d4878c63a09391f1c1257f3f7b";
+  const chave = 'de7216d4878c63a09391f1c1257f3f7b';
   const url = `https://api.themoviedb.org/3/discover/movie?api_key=${chave}&language=pt-BR&with_genres=${id}&page=${contador}`;
 
   // Nome e descrição do gênero (usando switch)
@@ -21,80 +21,80 @@ export default function CategoriaPage() {
 
   switch (id) {
     case 28:
-      nomeGenero = "Ação";
-      descricaoGenero = "Explosões, perseguições e muita adrenalina!";
+      nomeGenero = 'Ação';
+      descricaoGenero = 'Explosões, perseguições e muita adrenalina!';
       break;
     case 12:
-      nomeGenero = "Aventura";
-      descricaoGenero = "Explore mundos fantásticos e jornadas épicas.";
+      nomeGenero = 'Aventura';
+      descricaoGenero = 'Explore mundos fantásticos e jornadas épicas.';
       break;
     case 16:
-      nomeGenero = "Animação";
-      descricaoGenero = "Histórias animadas para todas as idades.";
+      nomeGenero = 'Animação';
+      descricaoGenero = 'Histórias animadas para todas as idades.';
       break;
     case 35:
-      nomeGenero = "Comédia";
-      descricaoGenero = "Prepare-se para boas risadas e leveza.";
+      nomeGenero = 'Comédia';
+      descricaoGenero = 'Prepare-se para boas risadas e leveza.';
       break;
     case 80:
-      nomeGenero = "Crime";
-      descricaoGenero = "Investigações, mistérios e o lado sombrio da lei.";
+      nomeGenero = 'Crime';
+      descricaoGenero = 'Investigações, mistérios e o lado sombrio da lei.';
       break;
     case 99:
-      nomeGenero = "Documentário";
-      descricaoGenero = "Conhecimento, realidade e histórias reais.";
+      nomeGenero = 'Documentário';
+      descricaoGenero = 'Conhecimento, realidade e histórias reais.';
       break;
     case 18:
-      nomeGenero = "Drama";
-      descricaoGenero = "Histórias profundas e emocionantes.";
+      nomeGenero = 'Drama';
+      descricaoGenero = 'Histórias profundas e emocionantes.';
       break;
     case 10751:
-      nomeGenero = "Família";
-      descricaoGenero = "Diversão para todas as idades.";
+      nomeGenero = 'Família';
+      descricaoGenero = 'Diversão para todas as idades.';
       break;
     case 14:
-      nomeGenero = "Fantasia";
-      descricaoGenero = "Magia, criaturas místicas e universos paralelos.";
+      nomeGenero = 'Fantasia';
+      descricaoGenero = 'Magia, criaturas místicas e universos paralelos.';
       break;
     case 36:
-      nomeGenero = "História";
-      descricaoGenero = "Reviva os grandes momentos do passado.";
+      nomeGenero = 'História';
+      descricaoGenero = 'Reviva os grandes momentos do passado.';
       break;
     case 27:
-      nomeGenero = "Terror";
-      descricaoGenero = "Só os corajosos continuam daqui pra frente...";
+      nomeGenero = 'Terror';
+      descricaoGenero = 'Só os corajosos continuam daqui pra frente...';
       break;
     case 10402:
-      nomeGenero = "Música";
-      descricaoGenero = "Som, ritmo e emoção nas telas.";
+      nomeGenero = 'Música';
+      descricaoGenero = 'Som, ritmo e emoção nas telas.';
       break;
     case 9648:
-      nomeGenero = "Mistério";
-      descricaoGenero = "Nada é o que parece. Descubra o segredo.";
+      nomeGenero = 'Mistério';
+      descricaoGenero = 'Nada é o que parece. Descubra o segredo.';
       break;
     case 10749:
-      nomeGenero = "Romance";
-      descricaoGenero = "Filmes que aquecem o coração (ou quebram 💔)";
+      nomeGenero = 'Romance';
+      descricaoGenero = 'Filmes que aquecem o coração (ou quebram 💔)';
       break;
     case 878:
-      nomeGenero = "Ficção Científica";
-      descricaoGenero = "Viagens no tempo, tecnologia e o impossível.";
+      nomeGenero = 'Ficção Científica';
+      descricaoGenero = 'Viagens no tempo, tecnologia e o impossível.';
       break;
     case 10770:
-      nomeGenero = "Cinema TV";
-      descricaoGenero = "Produções pensadas para a telinha.";
+      nomeGenero = 'Cinema TV';
+      descricaoGenero = 'Produções pensadas para a telinha.';
       break;
     case 53:
-      nomeGenero = "Thriller";
-      descricaoGenero = "Suspense, tensão e muitas reviravoltas.";
+      nomeGenero = 'Thriller';
+      descricaoGenero = 'Suspense, tensão e muitas reviravoltas.';
       break;
     case 10752:
-      nomeGenero = "Guerra";
-      descricaoGenero = "Conflitos, batalhas e histórias marcantes.";
+      nomeGenero = 'Guerra';
+      descricaoGenero = 'Conflitos, batalhas e histórias marcantes.';
       break;
     case 37:
-      nomeGenero = "Faroeste";
-      descricaoGenero = "Cowboys, duelos e o velho oeste americano.";
+      nomeGenero = 'Faroeste';
+      descricaoGenero = 'Cowboys, duelos e o velho oeste americano.';
       break;
     default:
       return invalido();
@@ -105,8 +105,10 @@ export default function CategoriaPage() {
       <div className="d-flex align-items-center justify-content-center px-3 invalido">
         <div className="text-center d-flex flex-column gap-3">
           <h1 className="text-warning">
-            <span className="text-white">Ops...</span><br />
-            Gênero <span className="text-white">inválido</span><br />
+            <span className="text-white">Ops...</span>
+            <br />
+            Gênero <span className="text-white">inválido</span>
+            <br />
             por favor volte às categorias
           </h1>
 
@@ -136,13 +138,12 @@ export default function CategoriaPage() {
       .then((data) => {
         const filtrados = data.results
           .filter((item) => item.poster_path != null)
-          .map((item) => ({ ...item, media_type: "movie" }));
+          .map((item) => ({ ...item, media_type: 'movie' }));
         setFilmes(filtrados);
       })
-      .catch((err) => console.error("Erro ao carregar filmes:", err));
+      .catch((err) => console.error('Erro ao carregar filmes:', err));
 
-    document.title = `Cine Trip | ${nomeGenero}`
-
+    document.title = `Cine Trip | ${nomeGenero}`;
   }, [id, contador]);
 
   return (

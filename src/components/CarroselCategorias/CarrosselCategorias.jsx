@@ -1,26 +1,28 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import Link from "next/link";
-import "swiper/css";
-import "swiper/css/navigation";
+import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import Link from 'next/link';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 export default function CarroselCategorias() {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    fetch("/json/categorias.json")
+    fetch('/json/categorias.json')
       .then((res) => res.json())
       .then((data) => setCategorias(data))
-      .catch((err) => console.error("Erro ao carregar categorias:", err));
+      .catch((err) => console.error('Erro ao carregar categorias:', err));
   }, []);
 
   return (
     <>
       <div className="titulo-destaque mt-5 mb-5">
-        <h1>Todas as <span>Categorias</span></h1>
+        <h1>
+          Todas as <span>Categorias</span>
+        </h1>
       </div>
 
       <Swiper
@@ -50,7 +52,8 @@ export default function CarroselCategorias() {
                   alt={categoria.nome}
                   className="genero-imagem"
                   onError={(e) => {
-                    e.currentTarget.src = "https://placehold.co/600x400?text=Sem+imagem";
+                    e.currentTarget.src =
+                      'https://placehold.co/600x400?text=Sem+imagem';
                   }}
                 />
               </div>

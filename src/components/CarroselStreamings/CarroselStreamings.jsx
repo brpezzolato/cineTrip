@@ -1,28 +1,31 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import Link from "next/link";
-import "swiper/css";
-import "swiper/css/navigation";
-import "./CarrosselStreamings.css";
-
+import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import Link from 'next/link';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import './CarrosselStreamings.css';
 
 export default function CarroselCategorias() {
   const [streaming, setstreaming] = useState([]);
 
   useEffect(() => {
-    fetch("/json/streaming.json")
-      .then(res => res.json())
-      .then(data => setstreaming(data))
-      .catch(err => console.error("Erro ao carregar os dados do Carrosel:", err));
+    fetch('/json/streaming.json')
+      .then((res) => res.json())
+      .then((data) => setstreaming(data))
+      .catch((err) =>
+        console.error('Erro ao carregar os dados do Carrosel:', err)
+      );
   }, []);
 
   return (
     <>
       <div className="titulo-destaque mt-5 mb-5">
-        <h1>Streamings mais <span>famosos</span></h1>
+        <h1>
+          Streamings mais <span>famosos</span>
+        </h1>
       </div>
 
       <Swiper
@@ -40,7 +43,7 @@ export default function CarroselCategorias() {
           768: { slidesPerView: 3 },
           992: { slidesPerView: 4 },
           1146: { slidesPerView: 4.9 },
-          1246: { slidesPerView: 5.4 }
+          1246: { slidesPerView: 5.4 },
         }}
       >
         {streaming.map((item) => (
