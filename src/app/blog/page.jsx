@@ -5,13 +5,11 @@ import Oscar from '@/components/Oscar/Oscar';
 import Noticias from '@/components/Noticias/Noticias';
 import './blog.css';
 
-// ATENÇÃO: O Next.js não permite exportar metadata em arquivos "use client".
-// Mova este bloco para o arquivo layout.js dentro da pasta app/blog/
-/*
+
 export const metadata = {
   title: 'CineTrip | Blog',
 };
-*/
+
 
 export default function Blog() {
   const [oscarData, setOscarData] = useState([]);

@@ -1,12 +1,30 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
 import './noticia.css';
 
-export default async function Noticia({ params }) {
-  const noticiaId = Number(params.id);
+export default function Noticia() {
+  const params = useParams();
+  const [resultado, setResultado] = useState(null);
 
-  const noticiasRes = await fetch('http://localhost:3000/json/noticias.json');
-  const noticias = await noticiasRes.json();
+  useEffect(() => {
+    async function carregarDados() {
+      const noticiasRes = await fetch('/json/noticias.json');
+      const noticias = await noticiasRes.json();
+      const noticiaId = Number(params.id);
+      const item = noticias.find((item) => item.id === noticiaId);
+      setResultado(item);
+    }
 
-  const resultado = noticias.find((item) => item.id === noticiaId);
+    if (params?.id) {
+      carregarDados();
+    }
+  }, [params?.id]);
+
+  if (!resultado) {
+    return null;
+  }
 
   return (
     <>
