@@ -5,12 +5,6 @@ import Oscar from '@/components/Oscar/Oscar';
 import Noticias from '@/components/Noticias/Noticias';
 import './blog.css';
 
-
-export const metadata = {
-  title: 'CineTrip | Blog',
-};
-
-
 export default function Blog() {
   const [oscarData, setOscarData] = useState([]);
   const [noticiasData, setNoticiasData] = useState([]);
