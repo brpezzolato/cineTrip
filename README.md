@@ -47,7 +47,7 @@ https://www.themoviedb.org/
 
 ### 5. Configure o .env na raiz do projeto
 
-NEXT_PUBLIC_API_KEY=SUA CHAVE DA API AQUIA
+NEXT_PUBLIC_API_KEY=SUA_CHAVE_DA_API
 
 ### 6. Rode o projeto
 
