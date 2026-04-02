@@ -25,15 +25,21 @@ navegação por conteúdos populares, tendências e buscas personalizadas.
 
 ### 1. Clone o repositório
 
-`git clone https://github.com/seu-usuario/cine-trip.git`
+```bash
+git clone https://github.com/seu-usuario/cine-trip.git
+```
 
 ### 2. Acesse a pasta
 
-`cd cine-trip`
+```bash
+cd cine-trip
+````
 
 ### 3. Instale as dependências
 
-`npm install`
+```bash
+npm install
+```
 
 ### 4. Pegue sua API Key
 
@@ -45,7 +51,9 @@ NEXT_PUBLIC_API_KEY=SUA CHAVE DA API AQUIA
 
 ### 6. Rode o projeto
 
-`npm run dev`
+```bash
+npm run dev
+```
 
 ### 7. Acesse
 
