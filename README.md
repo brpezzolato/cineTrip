@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Cine Trip
 
-## Getting Started
+O **Cine Trip** é uma aplicação web desenvolvida com **Next.js** que
+permite descobrir filmes e séries de forma rápida, intuitiva e visual. A
+plataforma reúne informações detalhadas sobre títulos e facilita a
+navegação por conteúdos populares, tendências e buscas personalizadas.
 
-First, run the development server:
+## 🚀 Funcionalidades
 
-```bash
+-   🔎 Busca de filmes e séries
+-   🎥 Exibição de detalhes (sinopse, avaliação, etc.)
+-   📺 Indicação de onde assistir
+-   🧭 Navegação por categorias e tendências
+-   ⚡ Interface moderna, responsiva e performática
+
+## 🛠️ Tecnologias
+
+-   Next.js
+-   React
+-   JavaScript / TypeScript
+-   CSS
+-   API do TMDB (The Movie Database)
+
+## 📦 Instalação e uso
+
+### 1. Clone o repositório
+
+git clone https://github.com/seu-usuario/cine-trip.git
+
+### 2. Acesse a pasta
+
+cd cine-trip
+
+### 3. Instale as dependências
+
+npm install
+
+### 4. Pegue sua API Key
+
+https://www.themoviedb.org/
+
+### 5. Configure o .env na raiz do projeto
+
+NEXT_PUBLIC_API_KEY=SUA CHAVE DA API AQUIA
+
+### 6. Rode o projeto
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 7. Acesse
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Contribuição
 
-## Learn More
+Pull requests são bem-vindos!
 
-To learn more about Next.js, take a look at the following resources:
+------------------------------------------------------------------------
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⭐ Se curtir, deixe uma estrela!
