@@ -1,3 +1,32 @@
+/*
+ * Carrosséis responsivos
+ * ----------------------
+ * Todos os carrosséis usam slidesPerView="auto": a largura de cada slide vem
+ * do CSS abaixo (e não de "N itens por tela"). Assim o slide sempre tem
+ * exatamente o tamanho do item e um item nunca invade o outro, em qualquer
+ * largura de tela.
+ */
+:root {
+    --carrossel-card: clamp(136px, 40vw, 200px);
+    --carrossel-logo: clamp(120px, 34vw, 180px);
+    --carrossel-genero: clamp(112px, 30vw, 170px);
+}
+
+.carrossel-cards .swiper-slide {
+    width: var(--carrossel-card);
+}
+
+.carrossel-cards .movie-card {
+    width: 100%;
+}
+
+/* Dentro do carrossel o card não "sobe" no hover (seria cortado pelo overflow) */
+.carrossel-cards .movie-card:hover {
+    transform: none;
+    filter: brightness(80%);
+    transition: 0.5s;
+}
+
 /* Botões de navegação compartilhados por todos os carrosséis Swiper */
 .swiper-button-next,
 .swiper-button-prev {
@@ -23,19 +52,17 @@
     font-weight: bold;
 }
 
-/* Dentro do carrossel o card não "sobe" no hover (seria cortado pelo overflow) */
-.carrossel-cards .movie-card:hover {
-    transform: none;
-    filter: brightness(80%);
-    transition: 0.5s;
+/* No celular a navegação é por arrasto; as setas só cobririam os cards */
+@media (max-width: 575.98px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
 }
 
 /* Top 10 */
 .top10-wrapper {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
 }
 
 .numero-top10-wrapper {
@@ -47,8 +74,18 @@
 }
 
 .numero-top10 {
-    width: 40px;
+    width: clamp(28px, 20%, 40px);
     height: auto;
     opacity: 0.9;
     filter: drop-shadow(2px 2px 2px black);
+}
+
+/* Logos de streaming */
+.swiper-streamings .swiper-slide {
+    width: var(--carrossel-logo);
+}
+
+/* Bolinhas de categoria */
+.swiper-categorias:not(.swiper-streamings) .swiper-slide {
+    width: var(--carrossel-genero);
 }

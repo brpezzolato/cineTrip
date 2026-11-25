@@ -7,15 +7,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './CarroselCard.css';
 
+// Só o espaçamento muda com a tela; a largura dos cards vem do CSS.
 const BREAKPOINTS = {
-  0: { slidesPerView: 1.3, spaceBetween: 12 },
-  330: { slidesPerView: 1.6, spaceBetween: 14 },
-  480: { slidesPerView: 1.8, spaceBetween: 14 },
-  768: { slidesPerView: 3, spaceBetween: 16 },
-  1024: { slidesPerView: 4.5, spaceBetween: 16 },
-  1280: { slidesPerView: 5.1, spaceBetween: 18 },
-  1536: { slidesPerView: 6, spaceBetween: 20 },
-  1800: { slidesPerView: 7, spaceBetween: 20 },
+  0: { spaceBetween: 12 },
+  768: { spaceBetween: 16 },
+  1280: { spaceBetween: 20 },
 };
 
 /**
@@ -27,7 +23,14 @@ export default function CarroselCard({ movies = [], top10 = false }) {
 
   return (
     <div className="container-fluid px-0 carrossel-cards">
-      <Swiper modules={[Navigation]} navigation breakpoints={BREAKPOINTS}>
+      <Swiper
+        modules={[Navigation]}
+        navigation
+        slidesPerView="auto"
+        spaceBetween={12}
+        breakpoints={BREAKPOINTS}
+        watchOverflow
+      >
         {itens.map((item, index) => (
           <SwiperSlide key={`${item.media_type}-${item.id}`}>
             {top10 ? (

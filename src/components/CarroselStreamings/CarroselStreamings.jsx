@@ -19,22 +19,13 @@ export default function CarroselStreamings() {
       </div>
 
       <Swiper
-        slidesPerView={5}
-        spaceBetween={20}
+        slidesPerView="auto"
+        spaceBetween={16}
         navigation
         modules={[Navigation]}
-        className="swiper-categorias"
-        breakpoints={{
-          0: { slidesPerView: 1 },
-          280: { slidesPerView: 1.4 },
-          347: { slidesPerView: 1.8 },
-          396: { slidesPerView: 2 },
-          500: { slidesPerView: 2.4 },
-          768: { slidesPerView: 3 },
-          992: { slidesPerView: 4 },
-          1146: { slidesPerView: 4.9 },
-          1246: { slidesPerView: 5.4 },
-        }}
+        className="swiper-categorias swiper-streamings"
+        breakpoints={{ 768: { spaceBetween: 20 } }}
+        watchOverflow
       >
         {streamings.map((item) => (
           <SwiperSlide key={item.id}>

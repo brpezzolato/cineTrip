@@ -19,18 +19,13 @@ export default function CarroselCategorias() {
       </div>
 
       <Swiper
-        slidesPerView={5}
-        spaceBetween={20}
+        slidesPerView="auto"
+        spaceBetween={16}
         navigation
         modules={[Navigation]}
         className="swiper-categorias"
-        breakpoints={{
-          0: { slidesPerView: 1.8 },
-          576: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          990: { slidesPerView: 3.8 },
-          1024: { slidesPerView: 5 },
-        }}
+        breakpoints={{ 768: { spaceBetween: 20 } }}
+        watchOverflow
       >
         {categorias.map((categoria) => (
           <SwiperSlide key={categoria.id}>
