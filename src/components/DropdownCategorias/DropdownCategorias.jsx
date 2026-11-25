@@ -1,63 +1,69 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { categorias } from '@/lib/dados';
 
-export default function DropdownCategorias() {
-  const [generos, setGeneros] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // Detecta mudança de rota
-  const chave = process.env.NEXT_PUBLIC_API_KEY;
+export default function DropdownCategorias({ ativo = false }) {
+  const [aberto, setAberto] = useState(false);
+  const pathname = usePathname();
+  const ref = useRef(null);
 
+  // Fecha ao trocar de página
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/genre/movie/list?api_key=${chave}&language=pt-BR`
-    )
-      .then((res) => res.json())
-      .then((data) => setGeneros(data.genres || []))
-      .catch((err) => console.error('Erro ao buscar gêneros:', err));
-  }, []);
-
-  useEffect(() => {
-    // Fecha o dropdown quando trocar de página
-    setIsOpen(false);
+    setAberto(false);
   }, [pathname]);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  // Fecha ao clicar fora ou apertar Esc
+  useEffect(() => {
+    if (!aberto) return;
+
+    function aoClicarFora(e) {
+      if (ref.current && !ref.current.contains(e.target)) setAberto(false);
+    }
+    function aoApertarTecla(e) {
+      if (e.key === 'Escape') setAberto(false);
+    }
+
+    document.addEventListener('mousedown', aoClicarFora);
+    document.addEventListener('keydown', aoApertarTecla);
+    return () => {
+      document.removeEventListener('mousedown', aoClicarFora);
+      document.removeEventListener('keydown', aoApertarTecla);
+    };
+  }, [aberto]);
 
   return (
-    <li className={`nav-item dropdown ${isOpen ? 'show' : ''}`}>
+    <li ref={ref} className={`nav-item dropdown ${aberto ? 'show' : ''}`}>
       <button
-        className="nav-link dropdown-toggle color-nav categ text-nowrap item-2"
-        onClick={toggleDropdown}
-        aria-expanded={isOpen}
+        type="button"
+        className={`nav-link dropdown-toggle color-nav text-nowrap ${ativo ? 'active' : ''}`}
+        onClick={() => setAberto((v) => !v)}
+        aria-expanded={aberto}
+        aria-controls="menu-categorias"
       >
         Categorias
       </button>
-      <ul className={`dropdown-menu dropdown-generos ${isOpen ? 'show' : ''}`}>
-        <div
-          className="d-flex flex-wrap menu"
-          style={{ minWidth: '400px', maxWidth: '600px' }}
-        >
-          <li className="col-4 mb-2">
-            <Link className="dropdown-item color-nav px-2" href="/categorias">
-              Geral
+      <ul
+        id="menu-categorias"
+        className={`dropdown-menu dropdown-generos ${aberto ? 'show' : ''}`}
+      >
+        <li className="col-4 mb-2">
+          <Link className="dropdown-item color-nav px-2" href="/categorias">
+            Geral
+          </Link>
+        </li>
+        {categorias.map((genero) => (
+          <li key={genero.id} className="col-4 mb-2">
+            <Link
+              className="dropdown-item color-nav px-2"
+              href={`/categorias/${genero.id}`}
+            >
+              {genero.nome}
             </Link>
           </li>
-          {generos.map((genero) => (
-            <li key={genero.id} className="col-4 mb-2">
-              <Link
-                className="dropdown-item color-nav px-2"
-                href={`/categorias/${genero.id}`}
-              >
-                {genero.name}
-              </Link>
-            </li>
-          ))}
-        </div>
+        ))}
       </ul>
     </li>
   );

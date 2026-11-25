@@ -17,8 +17,9 @@ navegação por conteúdos populares, tendências e buscas personalizadas.
 
 -   Next.js
 -   React
--   JavaScript / TypeScript
--   CSS
+-   JavaScript
+-   Bootstrap 5 + CSS
+-   Swiper
 -   API do TMDB (The Movie Database)
 
 ## 📦 Instalação e uso
@@ -26,14 +27,14 @@ navegação por conteúdos populares, tendências e buscas personalizadas.
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/cine-trip.git
+git clone https://github.com/brpezzolato/cinetrip.git
 ```
 
 ### 2. Acesse a pasta
 
 ```bash
-cd cine-trip
-````
+cd cinetrip
+```
 
 ### 3. Instale as dependências
 
@@ -45,9 +46,23 @@ npm install
 
 https://www.themoviedb.org/
 
-### 5. Configure o .env na raiz do projeto
+### 5. Configure o `.env.local` na raiz do projeto
 
-NEXT_PUBLIC_API_KEY=SUA_CHAVE_DA_API
+Copie o arquivo de exemplo e preencha **uma** das credenciais:
+
+```bash
+cp .env.example .env.local
+```
+
+```env
+TMDB_READ_ACCESS_TOKEN=SEU_TOKEN   # recomendado
+# ou
+TMDB_API_KEY=SUA_CHAVE
+```
+
+> As chamadas ao TMDB são feitas no servidor, então a credencial nunca é
+> exposta no navegador. Se você já usava `NEXT_PUBLIC_API_KEY`, renomeie para
+> `TMDB_API_KEY` (o nome antigo ainda funciona, mas será removido).
 
 ### 6. Rode o projeto
 
@@ -58,6 +73,20 @@ npm run dev
 ### 7. Acesse
 
 http://localhost:3000
+
+## 🗂️ Estrutura
+
+```
+src/
+├── app/          # Rotas (App Router). Páginas são Server Components.
+├── components/   # Componentes reutilizáveis
+├── data/         # Conteúdo editorial (notícias, Oscar, carrossel, streamings, categorias)
+└── lib/
+    ├── tmdb.js       # Cliente do TMDB (somente servidor, com cache)
+    ├── dados.js      # Acesso aos JSONs de src/data
+    ├── imagens.js    # URLs de imagens do TMDB
+    └── formatacao.js # Datas, notas e valores
+```
 
 ## 🤝 Contribuição
 

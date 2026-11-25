@@ -1,37 +1,27 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import Link from 'next/link';
+import { streamings } from '@/lib/dados';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import '@/components/CarroselCard/CarroselCard.css';
 import './CarrosselStreamings.css';
 
-export default function CarroselCategorias() {
-  const [streaming, setstreaming] = useState([]);
-
-  useEffect(() => {
-    fetch('/json/streaming.json')
-      .then((res) => res.json())
-      .then((data) => setstreaming(data))
-      .catch((err) =>
-        console.error('Erro ao carregar os dados do Carrosel:', err)
-      );
-  }, []);
-
+export default function CarroselStreamings() {
   return (
-    <>
+    <section>
       <div className="titulo-destaque mt-5 mb-5">
-        <h1>
+        <h2 className="h1">
           Streamings mais <span>famosos</span>
-        </h1>
+        </h2>
       </div>
 
       <Swiper
         slidesPerView={5}
         spaceBetween={20}
-        navigation={true}
+        navigation
         modules={[Navigation]}
         className="swiper-categorias"
         breakpoints={{
@@ -46,14 +36,14 @@ export default function CarroselCategorias() {
           1246: { slidesPerView: 5.4 },
         }}
       >
-        {streaming.map((item) => (
+        {streamings.map((item) => (
           <SwiperSlide key={item.id}>
-            <Link href={`${item.rota}`}>
-              <img className="streamings-logo" src={item.imagem} alt="logo" />
+            <Link href={`/streaming/${item.id_tmdb}`}>
+              <img className="streamings-logo" src={item.imagem} alt={item.nome} />
             </Link>
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </section>
   );
 }

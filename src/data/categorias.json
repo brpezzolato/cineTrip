@@ -1,0 +1,116 @@
+[
+  {
+    "id": 28,
+    "nome": "Ação",
+    "imagem": "/imagens-generos/acao.png",
+    "descricao": "Explosões, perseguições e muita adrenalina!"
+  },
+  {
+    "id": 12,
+    "nome": "Aventura",
+    "imagem": "/imagens-generos/aventura.png",
+    "descricao": "Explore mundos fantásticos e jornadas épicas."
+  },
+  {
+    "id": 16,
+    "nome": "Animação",
+    "imagem": "/imagens-generos/animacao.png",
+    "descricao": "Histórias animadas para todas as idades."
+  },
+  {
+    "id": 35,
+    "nome": "Comédia",
+    "imagem": "/imagens-generos/comedia.png",
+    "descricao": "Prepare-se para boas risadas e leveza."
+  },
+  {
+    "id": 80,
+    "nome": "Crime",
+    "imagem": "/imagens-generos/crime.png",
+    "descricao": "Investigações, mistérios e o lado sombrio da lei."
+  },
+  {
+    "id": 99,
+    "nome": "Documentário",
+    "imagem": "/imagens-generos/documentario.png",
+    "descricao": "Conhecimento, realidade e histórias reais."
+  },
+  {
+    "id": 18,
+    "nome": "Drama",
+    "imagem": "/imagens-generos/drama.png",
+    "descricao": "Histórias profundas e emocionantes."
+  },
+  {
+    "id": 10751,
+    "nome": "Família",
+    "imagem": "/imagens-generos/familia.png",
+    "descricao": "Diversão para todas as idades."
+  },
+  {
+    "id": 14,
+    "nome": "Fantasia",
+    "imagem": "/imagens-generos/fantasia.png",
+    "descricao": "Magia, criaturas místicas e universos paralelos."
+  },
+  {
+    "id": 36,
+    "nome": "História",
+    "imagem": "/imagens-generos/historia.png",
+    "descricao": "Reviva os grandes momentos do passado."
+  },
+  {
+    "id": 27,
+    "nome": "Terror",
+    "imagem": "/imagens-generos/terror.png",
+    "descricao": "Só os corajosos continuam daqui pra frente..."
+  },
+  {
+    "id": 10402,
+    "nome": "Música",
+    "imagem": "/imagens-generos/musica.png",
+    "descricao": "Som, ritmo e emoção nas telas."
+  },
+  {
+    "id": 9648,
+    "nome": "Mistério",
+    "imagem": "/imagens-generos/misterio.png",
+    "descricao": "Nada é o que parece. Descubra o segredo."
+  },
+  {
+    "id": 10749,
+    "nome": "Romance",
+    "imagem": "/imagens-generos/romance.png",
+    "descricao": "Filmes que aquecem o coração (ou quebram 💔)"
+  },
+  {
+    "id": 878,
+    "nome": "Ficção científica",
+    "imagem": "/imagens-generos/ficcao-cientifica.png",
+    "descricao": "Viagens no tempo, tecnologia e o impossível."
+  },
+  {
+    "id": 10770,
+    "nome": "Cinema TV",
+    "imagem": "/imagens-generos/cinema-tv.png",
+    "descricao": "Produções pensadas para a telinha."
+  },
+  {
+    "id": 53,
+    "nome": "Thriller",
+    "imagem": "/imagens-generos/thriller.png",
+    "descricao": "Suspense, tensão e muitas reviravoltas."
+  },
+  {
+    "id": 10752,
+    "nome": "Guerra",
+    "imagem": "/imagens-generos/guerra.png",
+    "descricao": "Conflitos, batalhas e histórias marcantes."
+  },
+  {
+    "id": 37,
+    "nome": "Faroeste",
+    "imagem": "/imagens-generos/faroeste.png",
+    "descricao": "Cowboys, duelos e o velho oeste americano."
+  }
+]

@@ -1,24 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-:root {
-    --Playfair: 'Playfair Display', serif;
-    --Quicksand: 'Quicksand', sans-serif;
-    --Roboto: 'Roboto', sans-serif;
-    --dark: #3c393d;
-    --exDark: #2b2b2b;
-    --branco: #ffff;
-    --amarelo: #FFC800;
-    --azulEscuro: #1E1E4F;
-    --cinzaEscuro: #131313;
-    --preto: black;
-}
-
-body {
+.pagina-blog {
     line-height: 1.4;
-    background-color: var(--preto);
 }
 
-img {
+:where(.pagina-blog) img {
     width: 100%;
     display: block;
 }
@@ -34,6 +18,9 @@ img {
 }
 
 .premio {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -58,7 +45,8 @@ img {
     width: 100%;
 }
 
-.designtitle h2 {
+.designtitle h2,
+.designtitle .premio {
     font-family: var(--Playfair);
     color: var(--amarelo);
     font-size: 2.4rem;
@@ -169,7 +157,8 @@ img {
     color: var(--exDark);
 }
 
-.blog-text h2 {
+.blog-text h2,
+.blog-text h3 {
     font-family: var(--Playfair);
     padding: 1rem 0;
     font-size: 1.65rem;

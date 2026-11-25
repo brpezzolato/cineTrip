@@ -1,84 +1,44 @@
-'use client';
+import GradeTitulos from '@/components/GradeTitulos/GradeTitulos';
+import { buscarTitulos } from '@/lib/tmdb';
 
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
-import Card from '@/components/Card/Card';
-import Loader from '@/components/Loader/LoaderItem';
-import './page.css';
+function lerTermo(searchParams) {
+  // `valorBuscado` é o nome antigo do parâmetro, mantido para links já compartilhados
+  const termo = searchParams.q ?? searchParams.valorBuscado ?? '';
+  return String(termo).trim();
+}
 
-export default function Busca() {
-  const searchParams = useSearchParams();
-  const valorBuscado = searchParams.get('valorBuscado');
-  const [filmes, setFilmes] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+export async function generateMetadata({ searchParams }) {
+  const termo = lerTermo(await searchParams);
+  return { title: termo ? `Busca: ${termo}` : 'Busca', robots: { index: false } };
+}
 
-  const chave = process.env.NEXT_PUBLIC_API_KEY;
-  const url = 'https://api.themoviedb.org/3/search/multi';
-
-  useEffect(() => {
-    if (valorBuscado) {
-      setIsLoading(true);
-      fetch(
-        `${url}?api_key=${chave}&query=${encodeURIComponent(
-          valorBuscado
-        )}&language=pt-BR`
-      )
-        .then((response) => response.json())
-        .then((data) => setFilmes(data.results || []))
-        .catch((error) => console.error('Erro:', error))
-        .finally(() => {
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 1000);
-        });
-    }
-  }, [valorBuscado]);
-
-  const filmesEncontrados = filmes.filter((item) => item.poster_path != null);
-
-  function exibirFilmes() {
-    if (isLoading) {
-      return (
-        <div className="d-flex justify-content-center align-items-center pt-5 loading">
-          <Loader />
-        </div>
-      );
-    }
-
-    if (filmesEncontrados.length > 0) {
-      return (
-        <div className="d-flex flex-wrap gap-5 justify-content-center pt-5">
-          {filmesEncontrados.map((item, index) => (
-            <Card key={index} item={item} />
-          ))}
-        </div>
-      );
-    } else {
-      return (
-        <div className="d-flex justify-content-center align-items-center nao-encontrado">
-          <h2>
-            <span>Nenhum</span> filme encontrado, desculpe.
-          </h2>
-        </div>
-      );
-    }
-  }
+export default async function BuscaPage({ searchParams }) {
+  const termo = lerTermo(await searchParams);
+  const resultados = await buscarTitulos(termo);
 
   return (
-    <>
-      <header>
-        <title>Cine Trip | Busca</title>
+    <div className="container container-lista">
+      <header className="pt-5">
+        {termo ? (
+          <>
+            <h1 className="titulo">
+              Resultados para: <span>{termo}</span>
+            </h1>
+            <p className="sub-titulo h4">Títulos encontrados: {resultados.length}</p>
+          </>
+        ) : (
+          <h1 className="titulo">
+            Digite algo na <span>busca</span>
+          </h1>
+        )}
       </header>
-      <div className="title pt-5 ps-2 ps-lg-5">
-        <h1 className="titulo">
-          Resultados para: <span>{valorBuscado}</span>
-        </h1>
-        <h4 className="sub-titulo">
-          Mídias encontradas: {filmesEncontrados.length}
-        </h4>
-      </div>
 
-      <div className="container">{exibirFilmes()}</div>
-    </>
+      {termo && (
+        <GradeTitulos
+          itens={resultados}
+          mensagemVazia="Nenhum filme ou série encontrado, desculpe."
+        />
+      )}
+    </div>
   );
 }

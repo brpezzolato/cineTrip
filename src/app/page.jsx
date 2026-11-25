@@ -1,121 +1,49 @@
-'use client';
-
-import { useEffect, useState } from 'react';
 import Carrosel from '@/components/Carrosel/Carrossel';
-import CarroselCard from '@/components/CarroselCard/CarroselCard';
-import CarroselStr from '@/components/CarroselStreamings/CarroselStreamings';
-import './index.css';
+import SecaoCarrossel from '@/components/SecaoCarrossel/SecaoCarrossel';
+import CarroselStreamings from '@/components/CarroselStreamings/CarroselStreamings';
+import { carrosel } from '@/lib/dados';
+import {
+  getFilmesEmAlta,
+  getFilmesEmCartaz,
+  getPopularesNosStreamings,
+  getSeriesEmAlta,
+} from '@/lib/tmdb';
 
-export default function Home() {
-  const [cabecalho, setCabecalho] = useState([]);
-  const [emAlta, setEmAlta] = useState([]);
-  const [populares, setPopulares] = useState([]);
-  const [cartaz, setCartaz] = useState([]);
-  const [avaliados, setAvaliados] = useState([]);
+export const metadata = {
+  title: { absolute: 'CineTrip | Home' },
+};
 
-  const chave = process.env.NEXT_PUBLIC_API_KEY;
-  const url = 'https://api.themoviedb.org/3/';
+// Atualiza as listas a cada hora
+export const revalidate = 3600;
 
-  useEffect(() => {
-    fetch('/json/carrosel.json')
-      .then((res) => res.json())
-      .then((data) => setCabecalho(data))
-      .catch((err) =>
-        console.error('Erro ao carregar os dados do Carrosel:', err),
-      );
-
-    //LER OS MAIS FALADOS
-    fetch(`${url}trending/movie/week?api_key=${chave}&language=pt-BR`)
-      .then((response) => response.json())
-      .then((data) => setEmAlta(data.results || []))
-      .catch((error) => console.error('Erro:', error));
-
-    // LER OS MAIS POPULARES do streaming
-    fetch(
-      `${url}discover/movie?api_key=${chave}&language=pt-BR&sort_by=popularity.desc&watch_region=BR&with_watch_monetization_types=flatrate`,
-    )
-      .then((response) => response.json())
-      .then((data) => setPopulares(data.results || []))
-      .catch((error) => console.error('Erro:', error));
-
-    //LER NOS CINEMAS
-    fetch(`${url}movie/now_playing?api_key=${chave}&language=pt-BR`)
-      .then((response) => response.json())
-      .then((data) => setCartaz(data.results || []))
-      .catch((error) => console.error('Erro:', error));
-
-    // LER OS MAIS BEM AVALIADOS
-    fetch(`${url}trending/tv/week?api_key=${chave}&language=pt-BR&region=BR`)
-      .then((response) => response.json())
-      .then((data) => setAvaliados(data.results || []))
-      .catch((error) => console.error('Erro:', error));
-  }, []);
+export default async function Home() {
+  const [emAlta, populares, cartaz, seriesEmAlta] = await Promise.all([
+    getFilmesEmAlta(),
+    getPopularesNosStreamings(),
+    getFilmesEmCartaz(),
+    getSeriesEmAlta(),
+  ]);
 
   return (
     <>
-      <header>
-        <title>Cine Club | Home</title>
-      </header>
-      <style>
-        {`.item-1 {
-          color: var(--amarelo) !important;
-          border-bottom: 1px solid var(--amarelo);
-        }`}
-      </style>
-
-      <Carrosel movies={cabecalho} />
+      <Carrosel movies={carrosel} />
 
       <div className="container">
-        <div className="treanding">
-          <div className="titulo-destaque mt-5 mb-5">
-            <h1>
-              Top trending da <span>semana</span>
-            </h1>
-          </div>
-          <div className="carrosel-trending">
-            <CarroselCard id="carrosel-alta" movies={emAlta} tipo="movie" />
-          </div>
-        </div>
-
-        <div className="treanding">
-          <div className="titulo-destaque mt-5 mb-5">
-            <h1>
-              Os mais populares dos <span>streamings</span>
-            </h1>
-          </div>
-          <div className="carrosel-trending">
-            <CarroselCard
-              id="carrosel-populares"
-              movies={populares}
-              tipo="movie"
-            />
-          </div>
-        </div>
-
-        <div className="treanding">
-          <div className="titulo-destaque mt-5 mb-5">
-            <h1>
-              Em <span>cartaz</span>
-            </h1>
-          </div>
-          <div className="carrosel-trending">
-            <CarroselCard id="carrosel-cartaz" movies={cartaz} tipo="movie" />
-          </div>
-        </div>
-
-        <div className="treanding">
-          <div className="titulo-destaque mt-5 mb-5">
-            <h1>
-              Top trending de series da <span>semana</span>
-            </h1>
-          </div>
-          <div className="carrosel-trending">
-            <CarroselCard id="carrosel-avalados" movies={avaliados} tipo="tv" />
-          </div>
-        </div>
+        <SecaoCarrossel titulo="Top trending da" destaque="semana" itens={emAlta} />
+        <SecaoCarrossel
+          titulo="Os mais populares dos"
+          destaque="streamings"
+          itens={populares}
+        />
+        <SecaoCarrossel titulo="Em" destaque="cartaz" itens={cartaz} />
+        <SecaoCarrossel
+          titulo="Top trending de séries da"
+          destaque="semana"
+          itens={seriesEmAlta}
+        />
 
         <div className="streamings-home mb-4">
-          <CarroselStr />
+          <CarroselStreamings />
         </div>
       </div>
     </>

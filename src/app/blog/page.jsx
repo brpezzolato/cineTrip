@@ -1,75 +1,32 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Oscar from '@/components/Oscar/Oscar';
 import Noticias from '@/components/Noticias/Noticias';
+import { noticias, oscar } from '@/lib/dados';
 import './blog.css';
 
+export const metadata = {
+  title: 'Blog',
+  description: 'Notícias do mundo do cinema e os últimos vencedores do Oscar.',
+};
+
 export default function Blog() {
-  const [oscarData, setOscarData] = useState([]);
-  const [noticiasData, setNoticiasData] = useState([]);
-  const [carregando, setCarregando] = useState(true);
-
-  useEffect(() => {
-    async function carregarDados() {
-      try {
-        const oscarRes = await fetch('/json/oscar.json');
-        const noticiasRes = await fetch('/json/noticias.json');
-
-        const oscarJson = await oscarRes.json();
-        const noticiasJson = await noticiasRes.json();
-
-        setOscarData(oscarJson);
-        setNoticiasData(noticiasJson);
-      } catch (erro) {
-        console.error('Erro ao buscar dados:', erro);
-      } finally {
-        setCarregando(false);
-      }
-    }
-
-    carregarDados();
-  }, []);
-
-  if (carregando) {
-    return (
-      <div
-        className="container-geral"
-        style={{ textAlign: 'center', padding: '50px' }}
-      >
-        Carregando blog...
-      </div>
-    );
-  }
-
   return (
-    <>
-      <style>
-          {`.item-3 {
-              color: var(--amarelo) !important;
-              border-bottom: 1px solid var(--amarelo);
-          }`}
-      </style>
-
+    <div className="pagina-blog">
       <section className="design container-geral" id="design">
         <div className="container-geral">
           <div className="designtitle">
-            <div className="premio">
-              <h2>O Blog</h2>
-              <img
-                className="trofeu"
-                src="/noticias/trofeuOscar.png"
-                alt="Troféu Oscar"
-              />
-              <h2>ndica</h2>
-            </div>
+            <h1 className="premio">
+              <span className="visually-hidden">O Blog Indica</span>
+              <span aria-hidden="true">O Blog</span>
+              <img className="trofeu" src="/noticias/trofeuOscar.png" alt="" />
+              <span aria-hidden="true">ndica</span>
+            </h1>
             <div className="subtitulo">
-              <p>os 9 últimos ganhadores do prêmio oscar de melhor filme</p>
+              <p>os {oscar.length} últimos ganhadores do Oscar de melhor filme</p>
             </div>
           </div>
           <div className="design-content">
-            {oscarData.map((item, index) => (
-              <div key={index} className="galeria">
+            {oscar.map((item) => (
+              <div key={item.id} className="galeria">
                 <Oscar item={item} />
               </div>
             ))}
@@ -81,19 +38,17 @@ export default function Blog() {
         <div className="container-geral">
           <div className="title1">
             <h2>Tudo sobre cinema</h2>
-            <p>
-              fique por dentro das últimas noticias do mundo cinematográfico
-            </p>
+            <p>fique por dentro das últimas notícias do mundo cinematográfico</p>
           </div>
           <div className="blog-content">
-            {noticiasData.map((noticia, index) => (
-              <div key={index} className="noticias">
+            {noticias.map((noticia) => (
+              <div key={noticia.id} className="noticias">
                 <Noticias noticia={noticia} />
               </div>
             ))}
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

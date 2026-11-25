@@ -1,0 +1,33 @@
+.genero-link {
+  text-decoration: none;
+  color: var(--branco);
+  flex: 0 0 auto;
+}
+
+.genero-bolinha {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--azulEscuro);
+}
+
+.genero-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.genero-link p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: var(--branco);
+}
+
+.genero-link:hover p {
+  color: var(--amarelo);
+}
+
+.swiper-categorias .swiper-wrapper {
+  margin-top: 2%;
+}

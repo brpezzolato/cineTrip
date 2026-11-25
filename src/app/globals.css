@@ -1,26 +1,99 @@
 :root {
-  --branco: #ffff;
-  --amarelo: #FFC800;
-  --azulEscuro: #1E1E4F;
+  --branco: #fff;
+  --amarelo: #ffc800;
+  --azulEscuro: #1e1e4f;
   --cinzaEscuro: #131313;
+  --cinza: #737373;
   --preto: #000;
+  --exDark: #2b2b2b;
+
+  /* Fontes carregadas via next/font no layout raiz */
+  --Playfair: var(--font-playfair), serif;
+  --Quicksand: var(--font-quicksand), sans-serif;
+  --Roboto: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
   background-color: var(--preto);
 }
 
-.not-found {
+::selection {
+  background-color: var(--amarelo);
+  color: var(--preto);
+}
+
+/* ---------- Títulos ---------- */
+
+.titulo-destaque h1,
+.titulo-destaque h2 {
+  color: var(--branco);
+  border-left: solid 3px var(--amarelo);
+  padding-left: 10px;
+}
+
+.titulo-destaque span,
+.titulo-destaque a {
+  color: var(--amarelo);
+  text-decoration: none;
+}
+
+.titulo {
+  border-left: solid 3px var(--amarelo);
+  padding-left: 10px;
+  color: var(--branco);
+}
+
+.titulo span {
+  color: var(--amarelo);
+}
+
+.sub-titulo {
+  color: var(--branco);
+  font-weight: normal;
+  opacity: 90%;
+}
+
+/* ---------- Paginação ---------- */
+
+.paginacao {
+  color: var(--branco);
+}
+
+.paginacao h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.paginacao a,
+.paginacao span[aria-disabled] {
+  color: var(--amarelo);
+  font-size: 20px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.paginacao span[aria-disabled] {
+  opacity: 0.3;
+}
+
+/* ---------- Estados ---------- */
+
+.estado-vazio {
   margin-top: 10vh;
   margin-bottom: 10vh;
 }
 
-.not-found img {
+.estado-vazio img {
   width: 50vh;
+  max-width: 100%;
   margin-bottom: 2%;
 }
 
-::selection {
-  background-color: var(--amarelo);
-  color: var(--preto);
+.titulo-destaque a:hover {
+  text-decoration: underline;
+}
+
+.container-lista {
+  margin-bottom: 50px;
 }
